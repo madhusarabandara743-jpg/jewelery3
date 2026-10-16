@@ -1,0 +1,4556 @@
+
+                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <style>
+                body {
+                  background-color: white; /* Ensure the iframe has a white background */
+                }
+
+                /* ================================
+   Nora — Luxury Jewelry Styles
+   ================================ */
+
+:root {
+  --ivory: #faf7f2;
+  --ivory-2: #f5f0e8;
+  --beige: #ece5d8;
+  --beige-dark: #d9cfbd;
+  --champagne: #c9a96e;
+  --champagne-light: #e4d4a8;
+  --gold: #b8944c;
+  --gold-deep: #8f7034;
+  --black: #1a1a1a;
+  --charcoal: #2d2d2d;
+  --gray: #6b6b6b;
+  --gray-light: #a8a8a8;
+  --line: #e8e2d4;
+  --error: #b44a3e;
+  --success: #4a7a56;
+
+  --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --container: 1280px;
+  --radius: 2px;
+  --transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  color: var(--black);
+  background: var(--ivory);
+  line-height: 1.6;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; transition: color var(--transition); }
+a:hover { color: var(--champagne); }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+input, select, textarea { font-family: inherit; font-size: inherit; }
+
+.container { max-width: var(--container); margin: 0 auto; padding: 0 2rem; }
+
+/* Typography */
+h1, h2, h3, h4, h5 { font-family: var(--font-serif); font-weight: 400; letter-spacing: 0.01em; line-height: 1.2; color: var(--black); }
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+h2 { font-size: clamp(2rem, 4vw, 3rem); }
+h3 { font-size: clamp(1.5rem, 2.5vw, 1.75rem); }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.1rem; letter-spacing: 0.05em; text-transform: uppercase; font-family: var(--font-sans); font-weight: 500; }
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--champagne);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+.eyebrow.light { color: var(--champagne-light); }
+.muted { color: var(--gray); font-size: 0.9em; }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition: all var(--transition);
+  cursor: pointer;
+  text-align: center;
+}
+.btn-primary { background: var(--black); color: var(--ivory); }
+.btn-primary:hover { background: var(--champagne); color: var(--black); }
+.btn-outline { background: transparent; color: var(--black); border-color: var(--black); }
+.btn-outline:hover { background: var(--black); color: var(--ivory); }
+.btn-light { background: var(--ivory); color: var(--black); }
+.btn-light:hover { background: var(--champagne); }
+.btn-lg { padding: 1.1rem 2.5rem; font-size: 0.85rem; }
+.btn-full { width: 100%; }
+.btn-link { display: inline-block; margin-top: 1rem; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 1px solid var(--black); padding-bottom: 2px; }
+
+/* Announcement Bar */
+.announcement-bar {
+  background: var(--black);
+  color: var(--ivory);
+  padding: 0.6rem 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Header */
+.site-header {
+  background: var(--ivory);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: box-shadow var(--transition);
+}
+.site-header.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.04); }
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2rem;
+}
+.logo {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  letter-spacing: 0.3em;
+  font-weight: 500;
+  color: var(--black);
+}
+.main-nav ul {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+.main-nav a {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 400;
+  position: relative;
+  padding: 0.25rem 0;
+}
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 1px;
+  background: var(--champagne);
+  transition: width var(--transition);
+}
+.main-nav a:hover::after, .main-nav a.active::after { width: 100%; }
+.main-nav a.active { color: var(--champagne); }
+
+.nav-icons { display: flex; gap: 1.25rem; align-items: center; }
+.icon-btn {
+  color: var(--black);
+  padding: 0.25rem;
+  position: relative;
+  transition: color var(--transition);
+}
+.icon-btn:hover { color: var(--champagne); }
+.cart-count {
+  position: absolute;
+  top: -4px; right: -8px;
+  background: var(--champagne);
+  color: var(--black);
+  font-size: 0.65rem;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 500;
+}
+
+.nav-toggle { display: none; flex-direction: column; gap: 4px; padding: 0.5rem; }
+.nav-toggle span { width: 22px; height: 1px; background: var(--black); transition: all var(--transition); }
+
+/* Search bar */
+.search-bar {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition);
+  background: var(--ivory-2);
+  border-top: 1px solid var(--line);
+}
+.search-bar.open { max-height: 120px; }
+.search-bar form { display: flex; padding: 1rem 0; gap: 1rem; }
+.search-bar input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--line);
+  background: var(--ivory);
+  font-size: 0.95rem;
+}
+.search-bar input:focus { outline: none; border-color: var(--champagne); }
+.search-bar button {
+  padding: 0.75rem 1.5rem;
+  background: var(--black);
+  color: var(--ivory);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  height: 85vh;
+  min-height: 560px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero-image img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: brightness(0.92);
+}
+.hero-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(26,26,26,0.35) 0%, rgba(26,26,26,0.1) 60%, transparent 100%);
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: var(--ivory);
+  max-width: 720px;
+  padding: 2rem;
+}
+.hero-content h1 {
+  color: var(--ivory);
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+.hero-content p {
+  font-size: 1.05rem;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+/* Sections */
+.section { padding: 6rem 0; }
+.section-head { text-align: center; margin-bottom: 3.5rem; }
+.section-foot { text-align: center; margin-top: 3rem; }
+
+/* Collection Grid */
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.collection-card {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background: var(--beige);
+}
+.collection-card img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.collection-card:hover img { transform: scale(1.05); }
+.collection-info {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+  background: linear-gradient(to top, rgba(26,26,26,0.6), transparent 60%);
+  color: var(--ivory);
+}
+.collection-info h3 { color: var(--ivory); margin-bottom: 0.25rem; }
+.collection-info span {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all var(--transition);
+}
+.collection-card:hover .collection-info span { opacity: 1; transform: translateY(0); }
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem 1.5rem;
+}
+.product-card {
+  display: block;
+  text-align: center;
+  transition: transform var(--transition);
+}
+.product-card-image {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background: var(--beige);
+  margin-bottom: 1rem;
+}
+.product-card-image img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.product-card:hover .product-card-image img { transform: scale(1.04); }
+.product-badge {
+  position: absolute;
+  top: 1rem; left: 1rem;
+  background: var(--black);
+  color: var(--ivory);
+  padding: 0.3rem 0.7rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.product-badge.sale { background: var(--champagne); color: var(--black); }
+.product-quick-add {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: rgba(26,26,26,0.9);
+  color: var(--ivory);
+  padding: 0.9rem;
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transform: translateY(100%);
+  transition: transform var(--transition);
+  cursor: pointer;
+}
+.product-card:hover .product-quick-add { transform: translateY(0); }
+.product-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 0.35rem;
+}
+.product-price {
+  font-size: 0.9rem;
+  color: var(--black);
+  letter-spacing: 0.05em;
+}
+.product-price .old { color: var(--gray-light); text-decoration: line-through; margin-right: 0.5rem; }
+.product-price .sale { color: var(--champagne); }
+
+/* Promo Banner */
+.promo-banner {
+  background: linear-gradient(135deg, var(--black) 0%, var(--charcoal) 100%);
+  color: var(--ivory);
+  padding: 6rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.promo-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1600&q=80') center/cover;
+  opacity: 0.15;
+}
+.promo-inner { position: relative; max-width: 600px; margin: 0 auto; text-align: center; }
+.promo-text h2 { color: var(--ivory); margin-bottom: 1rem; }
+.promo-text p { margin-bottom: 2rem; color: var(--beige); }
+
+/* Features */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  text-align: center;
+}
+.feature-icon {
+  font-size: 2rem;
+  color: var(--champagne);
+  margin-bottom: 1rem;
+}
+.feature h3 { font-size: 1.25rem; margin-bottom: 0.75rem; }
+.feature p { color: var(--gray); font-size: 0.9rem; }
+
+/* Testimonials */
+.testimonials { background: var(--ivory-2); }
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+.testimonial {
+  background: var(--ivory);
+  padding: 2.5rem;
+  text-align: center;
+  border: 1px solid var(--line);
+}
+.stars { color: var(--champagne); margin-bottom: 1rem; letter-spacing: 0.1em; }
+.testimonial p { font-family: var(--font-serif); font-size: 1.1rem; font-style: italic; margin-bottom: 1.5rem; line-height: 1.5; }
+.author strong { display: block; font-family: var(--font-sans); font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.author span { font-size: 0.75rem; color: var(--gray); }
+
+/* Newsletter */
+.newsletter { background: var(--beige); text-align: center; }
+.newsletter-inner { max-width: 600px; margin: 0 auto; }
+.newsletter h2 { margin-bottom: 1rem; }
+.newsletter p { margin-bottom: 2rem; color: var(--gray); }
+.newsletter-form { display: flex; gap: 0; max-width: 480px; margin: 0 auto; }
+.newsletter-form input {
+  flex: 1;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--line);
+  background: var(--ivory);
+  font-size: 0.9rem;
+}
+.newsletter-form input:focus { outline: none; border-color: var(--champagne); }
+.newsletter-form button { border-left: none; }
+
+/* Footer */
+.site-footer {
+  background: var(--black);
+  color: var(--beige);
+  padding: 4rem 0 0;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.footer-logo {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  letter-spacing: 0.3em;
+  color: var(--ivory);
+  margin-bottom: 1rem;
+}
+.footer-col p { font-size: 0.85rem; color: var(--gray-light); line-height: 1.7; margin-bottom: 1.5rem; }
+.footer-col h5 {
+  color: var(--ivory);
+  margin-bottom: 1.25rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.6rem; font-size: 0.85rem; }
+.footer-col a:hover { color: var(--champagne); }
+.contact-list li { color: var(--gray-light); }
+.social-links { display: flex; gap: 1rem; }
+.social-links a {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  transition: all var(--transition);
+}
+.social-links a:hover { background: var(--champagne); color: var(--black); border-color: var(--champagne); }
+.footer-bottom {
+  padding: 1.5rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--gray-light);
+}
+.payment-methods { letter-spacing: 0.1em; }
+
+/* Shop Page */
+.shop-page { padding: 3rem 0 5rem; }
+.shop-head { text-align: center; margin-bottom: 3rem; }
+.shop-layout { display: grid; grid-template-columns: 240px 1fr; gap: 3rem; }
+.shop-sidebar h4 { font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1rem; color: var(--black); font-family: var(--font-sans); font-weight: 500; }
+.filter-group { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--line); }
+.filter-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: var(--charcoal);
+}
+.filter-group label:hover { color: var(--champagne); }
+.filter-group input[type="radio"], .filter-group input[type="checkbox"] { accent-color: var(--champagne); }
+
+.shop-toolbar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+.shop-toolbar input, .shop-toolbar select {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--line);
+  background: var(--ivory);
+  font-size: 0.9rem;
+}
+.shop-toolbar input { flex: 1; }
+.shop-toolbar input:focus, .shop-toolbar select:focus { outline: none; border-color: var(--champagne); }
+
+/* Product Page */
+.product-page { padding: 2rem 0 5rem; }
+.breadcrumb { font-size: 0.8rem; color: var(--gray); margin-bottom: 2rem; letter-spacing: 0.05em; }
+.breadcrumb a:hover { color: var(--champagne); }
+.product-layout { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; }
+.gallery-main {
+  aspect-ratio: 3/4;
+  background: var(--beige);
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.gallery-main img { width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; transition: transform var(--transition); }
+.gallery-main:hover img { transform: scale(1.03); }
+.gallery-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; }
+.gallery-thumbs button {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  padding: 0;
+  background: var(--beige);
+}
+.gallery-thumbs button.active { border-color: var(--champagne); }
+.gallery-thumbs img { width: 100%; height: 100%; object-fit: cover; }
+
+.product-info h1 { margin: 0.5rem 0 1rem; }
+.product-price { font-size: 1.5rem; margin-bottom: 1rem; display: flex; gap: 1rem; align-items: baseline; }
+.price-current { font-family: var(--font-serif); }
+.price-old { color: var(--gray-light); text-decoration: line-through; font-size: 1.1rem; }
+.product-rating { color: var(--champagne); margin-bottom: 1.5rem; font-size: 0.9rem; }
+.product-rating span { color: var(--gray); margin-left: 0.5rem; }
+.product-description { color: var(--charcoal); margin-bottom: 2rem; line-height: 1.7; }
+
+.option-group { margin-bottom: 1.5rem; }
+.option-group > label { display: block; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.75rem; font-weight: 500; }
+.size-options { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.size-options button {
+  min-width: 48px;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--line);
+  background: var(--ivory);
+  font-size: 0.85rem;
+  transition: all var(--transition);
+}
+.size-options button:hover { border-color: var(--champagne); }
+.size-options button.active { background: var(--black); color: var(--ivory); border-color: var(--black); }
+
+.quantity-selector { display: inline-flex; border: 1px solid var(--line); }
+.quantity-selector button { padding: 0.6rem 1rem; font-size: 1rem; background: var(--ivory); }
+.quantity-selector button:hover { background: var(--beige); }
+.quantity-selector input {
+  width: 60px;
+  text-align: center;
+  border: none;
+  border-left: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  padding: 0.6rem;
+  font-size: 0.9rem;
+}
+.quantity-selector input:focus { outline: none; }
+
+.product-actions { display: flex; gap: 0.75rem; margin: 2rem 0; flex-wrap: wrap; }
+.product-actions .btn { flex: 1; min-width: 140px; }
+.wishlist-btn {
+  width: 56px; height: 56px;
+  border: 1px solid var(--black);
+  font-size: 1.5rem;
+  flex: 0 0 auto;
+  transition: all var(--transition);
+}
+.wishlist-btn:hover { background: var(--champagne); border-color: var(--champagne); }
+
+.product-meta { margin: 2rem 0; padding: 1.5rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 0.9rem; }
+.product-meta > div { margin-bottom: 0.5rem; }
+.product-meta strong { font-weight: 500; margin-right: 0.5rem; }
+.in-stock { color: var(--success); }
+.out-of-stock { color: var(--error); }
+
+.product-tabs { margin-top: 2rem; }
+.tab {
+  padding: 0.75rem 1.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--line);
+  margin-right: 0.5rem;
+  color: var(--gray);
+}
+.tab.active { color: var(--black); border-bottom-color: var(--champagne); }
+.tab-content { display: none; padding: 1.5rem 0; color: var(--charcoal); line-height: 1.7; }
+.tab-content.active { display: block; }
+
+/* Cart Page */
+.cart-page { padding: 3rem 0 5rem; }
+.cart-page h1 { text-align: center; margin-bottom: 3rem; }
+.cart-layout { display: grid; grid-template-columns: 1fr 380px; gap: 3rem; }
+.cart-item {
+  display: grid;
+  grid-template-columns: 100px 1fr auto auto;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--line);
+  align-items: center;
+}
+.cart-item img { width: 100px; aspect-ratio: 3/4; object-fit: cover; background: var(--beige); }
+.cart-item-info h3 { font-size: 1.1rem; margin-bottom: 0.25rem; }
+.cart-item-info h3 a:hover { color: var(--champagne); }
+.cart-item-info .price { font-size: 0.95rem; margin-top: 0.5rem; }
+.cart-item-qty { display: flex; flex-direction: column; gap: 0.5rem; align-items: flex-end; }
+.remove-btn { font-size: 0.75rem; color: var(--gray); text-decoration: underline; }
+.remove-btn:hover { color: var(--error); }
+.cart-item-total { font-family: var(--font-serif); font-size: 1.1rem; min-width: 80px; text-align: right; }
+
+.cart-summary {
+  background: var(--ivory-2);
+  padding: 2rem;
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+.cart-summary h3 { margin-bottom: 1.5rem; }
+.summary-row { display: flex; justify-content: space-between; padding: 0.75rem 0; font-size: 0.95rem; }
+.summary-row.total { border-top: 1px solid var(--line); margin-top: 1rem; padding-top: 1.5rem; font-size: 1.25rem; font-family: var(--font-serif); }
+.discount-row { display: flex; gap: 0.5rem; margin: 1rem 0; }
+.discount-row input { flex: 1; padding: 0.6rem; border: 1px solid var(--line); background: var(--ivory); }
+.cart-summary .btn { margin-top: 1rem; }
+
+/* Checkout Page */
+.checkout-page { padding: 3rem 0 5rem; }
+.checkout-page h1 { text-align: center; margin-bottom: 3rem; }
+.checkout-layout { display: grid; grid-template-columns: 1fr 420px; gap: 3rem; }
+.checkout-section { margin-bottom: 2.5rem; }
+.checkout-section h3 { margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--line); }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+.form-group { margin-bottom: 1rem; }
+.form-group label { display: block; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; font-weight: 500; }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--line);
+  background: var(--ivory);
+  font-size: 0.9rem;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--champagne); }
+.form-group .error { border-color: var(--error); }
+.error-msg { color: var(--error); font-size: 0.8rem; margin-top: 0.25rem; }
+
+.payment-methods-list { display: grid; gap: 0.5rem; }
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.payment-option:hover { border-color: var(--champagne); }
+.payment-option.selected { border-color: var(--black); background: var(--ivory-2); }
+.payment-option input { accent-color: var(--champagne); }
+.payment-option-info { flex: 1; }
+.payment-option-info strong { display: block; font-size: 0.9rem; margin-bottom: 0.15rem; }
+.payment-option-info span { font-size: 0.8rem; color: var(--gray); }
+
+.order-summary-checkout {
+  background: var(--ivory-2);
+  padding: 2rem;
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+.order-summary-checkout h3 { margin-bottom: 1.5rem; }
+.summary-item {
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.9rem;
+}
+.summary-item img { width: 50px; aspect-ratio: 3/4; object-fit: cover; background: var(--beige); }
+.summary-item-info { flex: 1; }
+.summary-item-info strong { display: block; font-weight: 500; margin-bottom: 0.15rem; }
+.summary-item-info span { color: var(--gray); font-size: 0.8rem; }
+
+/* Account Page */
+.account-page { padding: 3rem 0 5rem; min-height: 60vh; }
+.auth-layout { max-width: 440px; margin: 0 auto; text-align: center; }
+.auth-layout h1 { margin-bottom: 0.5rem; }
+.auth-layout > p { color: var(--gray); margin-bottom: 2rem; }
+.auth-form { text-align: left; }
+.auth-form .form-group { margin-bottom: 1.25rem; }
+.auth-form .btn { width: 100%; margin-top: 0.5rem; }
+.auth-switch { margin-top: 1.5rem; font-size: 0.9rem; color: var(--gray); }
+.auth-switch a { color: var(--champagne); font-weight: 500; }
+
+.account-dashboard { display: grid; grid-template-columns: 240px 1fr; gap: 3rem; }
+.account-nav { border-right: 1px solid var(--line); padding-right: 2rem; }
+.account-nav button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+  border-left: 2px solid transparent;
+  transition: all var(--transition);
+}
+.account-nav button:hover { color: var(--champagne); }
+.account-nav button.active { border-left-color: var(--champagne); color: var(--champagne); }
+.account-content h2 { margin-bottom: 1.5rem; }
+
+/* Orders Page */
+.orders-page { padding: 3rem 0 5rem; }
+.orders-page h1 { text-align: center; margin-bottom: 2rem; }
+.track-form {
+  max-width: 500px;
+  margin: 0 auto 3rem;
+  display: grid;
+  gap: 1rem;
+}
+.track-form label { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; }
+.track-form input { width: 100%; padding: 0.75rem 1rem; border: 1px solid var(--line); background: var(--ivory); margin-top: 0.5rem; }
+.track-form input:focus { outline: none; border-color: var(--champagne); }
+.order-track-card {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--ivory-2);
+  padding: 2.5rem;
+  text-align: center;
+}
+.order-track-card h2 { margin-bottom: 0.5rem; }
+.status-badge {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background: var(--champagne);
+  color: var(--black);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-left: 0.5rem;
+}
+.order-steps {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2.5rem;
+  position: relative;
+}
+.order-steps::before {
+  content: '';
+  position: absolute;
+  top: 14px; left: 10%; right: 10%;
+  height: 1px;
+  background: var(--line);
+  z-index: 0;
+}
+.step {
+  position: relative;
+  z-index: 1;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray);
+  padding-top: 2rem;
+}
+.step::before {
+  content: '';
+  position: absolute;
+  top: 8px; left: 50%;
+  transform: translateX(-50%);
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--ivory);
+  border: 1px solid var(--line);
+}
+.step.done { color: var(--black); }
+.step.done::before { background: var(--champagne); border-color: var(--champagne); }
+
+/* Contact Page */
+.contact-page { padding: 3rem 0 5rem; }
+.contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+.contact-info h1 { margin-bottom: 1rem; }
+.contact-info > p { color: var(--gray); margin-bottom: 2rem; line-height: 1.7; }
+.contact-info ul { list-style: none; }
+.contact-info li { padding: 0.75rem 0; border-bottom: 1px solid var(--line); font-size: 0.95rem; }
+.contact-form { display: grid; gap: 1rem; }
+.contact-form label { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 500; }
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--line);
+  background: var(--ivory);
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+.contact-form input:focus, .contact-form textarea:focus { outline: none; border-color: var(--champagne); }
+
+/* About Page */
+.about-hero { position: relative; height: 60vh; min-height: 400px; overflow: hidden; }
+.about-hero img { width: 100%; height: 100%; object-fit: cover; }
+.about-hero-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--ivory);
+  background: rgba(26,26,26,0.3);
+  text-align: center;
+}
+.about-hero-text h1 { color: var(--ivory); margin-bottom: 0.5rem; }
+.about-content { max-width: 800px; margin: 0 auto; text-align: center; }
+.about-content p { color: var(--charcoal); line-height: 1.8; margin-bottom: 1.5rem; font-size: 1.05rem; }
+.about-content h2 { margin-bottom: 1.5rem; }
+
+/* Policy Page */
+.policy-page { padding: 3rem 0 5rem; }
+.policy-page h1 { text-align: center; margin-bottom: 3rem; }
+.policy-page section { margin-bottom: 3rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+.policy-page h2 { margin-bottom: 1rem; }
+.policy-page p { color: var(--charcoal); line-height: 1.8; margin-bottom: 1rem; }
+.policy-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+.policy-table th, .policy-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--line); font-size: 0.9rem; }
+.policy-table th { font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; font-size: 0.75rem; }
+
+/* Admin */
+.admin-body { background: var(--ivory-2); }
+.admin-layout { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+.admin-sidebar {
+  background: var(--black);
+  color: var(--ivory);
+  padding: 2rem 0;
+}
+.admin-logo {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  letter-spacing: 0.3em;
+  text-align: center;
+  padding: 0 1.5rem 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 1.5rem;
+}
+.admin-logo span { font-size: 0.7rem; letter-spacing: 0.2em; color: var(--champagne); }
+.admin-sidebar nav { display: flex; flex-direction: column; }
+.admin-sidebar button {
+  padding: 0.9rem 1.5rem;
+  text-align: left;
+  color: var(--beige);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  border-left: 3px solid transparent;
+  transition: all var(--transition);
+}
+.admin-sidebar button:hover { background: rgba(255,255,255,0.05); color: var(--ivory); }
+.admin-sidebar button.active { background: rgba(255,255,255,0.08); color: var(--champagne); border-left-color: var(--champagne); }
+.logout-btn { margin-top: auto !important; color: var(--gray-light) !important; }
+
+.admin-main { padding: 2rem 3rem; overflow-x: auto; }
+.admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--line); }
+.admin-header h1 { font-size: 1.75rem; }
+.admin-user { font-size: 0.85rem; color: var(--gray); }
+.admin-user a { color: var(--champagne); margin-left: 1rem; }
+
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 2.5rem; }
+.stat-card {
+  background: var(--ivory);
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+}
+.stat-card .label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); margin-bottom: 0.5rem; }
+.stat-card .value { font-family: var(--font-serif); font-size: 2rem; color: var(--black); }
+.stat-card .change { font-size: 0.8rem; color: var(--success); margin-top: 0.25rem; }
+
+.admin-table {
+  width: 100%;
+  background: var(--ivory);
+  border: 1px solid var(--line);
+  border-collapse: collapse;
+}
+.admin-table th, .admin-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--line); font-size: 0.9rem; }
+.admin-table th { background: var(--ivory-2); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; }
+.admin-table img { width: 50px; aspect-ratio: 1; object-fit: cover; background: var(--beige); }
+.admin-table .actions { display: flex; gap: 0.5rem; }
+.admin-table .actions button {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  border: 1px solid var(--line);
+  background: var(--ivory);
+}
+.admin-table .actions button:hover { border-color: var(--champagne); color: var(--champagne); }
+
+.admin-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ivory-2);
+}
+.admin-login-card {
+  background: var(--ivory);
+  padding: 3rem;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid var(--line);
+  text-align: center;
+}
+.admin-login-card h2 { margin-bottom: 0.5rem; }
+.admin-login-card > p { color: var(--gray); margin-bottom: 2rem; font-size: 0.9rem; }
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 5rem 2rem;
+}
+.empty-state h2, .empty-state h3 { margin-bottom: 1rem; }
+.empty-state p { color: var(--gray); margin-bottom: 2rem; }
+
+.hidden { display: none !important; }
+.loading { text-align: center; padding: 2rem; color: var(--gray); }
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 2rem; right: 2rem;
+  background: var(--black);
+  color: var(--ivory);
+  padding: 1rem 1.5rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all var(--transition);
+  z-index: 1000;
+  max-width: 320px;
+}
+.toast.show { transform: translateY(0); opacity: 1; }
+.toast.error { background: var(--error); }
+.toast.success { background: var(--success); }
+
+/* Animations */
+.fade-in { animation: fadeIn 1s ease both; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .product-grid { grid-template-columns: repeat(3, 1fr); }
+  .collection-grid { grid-template-columns: repeat(2, 1fr); }
+  .features-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .testimonial-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
+  .shop-layout { grid-template-columns: 200px 1fr; gap: 2rem; }
+  .product-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .cart-layout, .checkout-layout { grid-template-columns: 1fr; }
+  .cart-summary, .order-summary-checkout { position: static; }
+  .account-dashboard { grid-template-columns: 1fr; }
+  .account-nav { border-right: none; border-bottom: 1px solid var(--line); padding-right: 0; padding-bottom: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .account-nav button { width: auto; border-left: none; border-bottom: 2px solid transparent; padding: 0.5rem 1rem; }
+  .account-nav button.active { border-bottom-color: var(--champagne); border-left: none; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .admin-layout { grid-template-columns: 1fr; }
+  .admin-sidebar { padding: 1rem 0; }
+  .admin-sidebar nav { flex-direction: row; overflow-x: auto; }
+  .admin-sidebar button { white-space: nowrap; border-left: none; border-bottom: 3px solid transparent; }
+  .admin-sidebar button.active { border-bottom-color: var(--champagne); border-left: none; }
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 1.25rem; }
+  .nav-toggle { display: flex; }
+  .main-nav {
+    position: fixed;
+    top: 0; left: 0;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background: var(--ivory);
+    padding: 5rem 2rem 2rem;
+    transform: translateX(-100%);
+    transition: transform var(--transition);
+    box-shadow: 0 0 40px rgba(0,0,0,0.1);
+    z-index: 200;
+  }
+  .main-nav.open { transform: translateX(0); }
+  .main-nav ul { flex-direction: column; gap: 1.5rem; }
+  .main-nav a { font-size: 1rem; }
+
+  .hero { height: 70vh; min-height: 480px; }
+  .section { padding: 4rem 0; }
+  .product-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem 1rem; }
+  .collection-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .features-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+
+  .shop-layout { grid-template-columns: 1fr; }
+  .shop-sidebar { border-bottom: 1px solid var(--line); padding-bottom: 1.5rem; }
+  .shop-toolbar { flex-direction: column; }
+  .shop-toolbar input, .shop-toolbar select { width: 100%; }
+
+  .cart-item { grid-template-columns: 80px 1fr; gap: 1rem; }
+  .cart-item-qty, .cart-item-total { grid-column: 2; }
+  .cart-item-total { text-align: left; }
+  .form-row { grid-template-columns: 1fr; }
+
+  .contact-layout { grid-template-columns: 1fr; gap: 2rem; }
+  .newsletter-form { flex-direction: column; }
+  .newsletter-form button { width: 100%; }
+
+  .order-steps { flex-wrap: wrap; gap: 1rem; }
+  .order-steps::before { display: none; }
+  .step { padding-top: 0; }
+  .step::before { display: none; }
+
+  .stats-grid { grid-template-columns: 1fr; }
+  .admin-main { padding: 1.5rem; }
+  .admin-table { font-size: 0.8rem; }
+  .admin-table th, .admin-table td { padding: 0.6rem; }
+}
+
+@media (max-width: 480px) {
+  .product-grid { grid-template-columns: 1fr 1fr; gap: 1rem 0.75rem; }
+  .product-card h3 { font-size: 0.95rem; }
+  .product-price { font-size: 0.85rem; }
+  .hero-content h1 { font-size: 2.25rem; }
+  .collection-grid { grid-template-columns: 1fr; }
+}
+
+
+              </style>
+                        </head>
+                        <body>
+                            <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nora — Elegance in Every Detail | Luxury Jewelry</title>
+<meta name="description" content="Nora is a luxury online jewelry boutique offering handcrafted rings, necklaces, earrings, bracelets, and personalized pieces in gold and precious stones." />
+<meta name="keywords" content="luxury jewelry, gold jewelry, rings, necklaces, earrings, personalized jewelry, Nora" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- Announcement Bar -->
+<div class="announcement-bar">
+  <div class="container announcement-inner">
+    <span>? Complimentary shipping on orders over $150 ?</span>
+  </div>
+</div>
+
+<!-- Navigation -->
+<header class="site-header" id="siteHeader">
+  <div class="container nav-container">
+    <button class="nav-toggle" aria-label="Open menu" id="navToggle">
+      <span></span><span></span><span></span>
+    </button>
+    <a href="index.html" class="logo" aria-label="Nora home">NORA</a>
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="shop.html?collection=collections">Collections</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-icons">
+      <button class="icon-btn" aria-label="Search" id="searchToggle">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+      <a href="account.html" class="icon-btn" aria-label="Account">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </a>
+      <a href="cart.html" class="icon-btn cart-icon" aria-label="Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+    </div>
+  </div>
+  <div class="search-bar" id="searchBar">
+    <div class="container">
+      <form id="searchForm" action="shop.html" method="get">
+        <input type="search" name="q" placeholder="Search for rings, necklaces, earrings..." aria-label="Search products" />
+        <button type="submit" aria-label="Submit search">Search</button>
+      </form>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=1800&q=80" alt="Elegant gold jewelry on ivory silk" loading="eager" />
+  </div>
+  <div class="hero-content fade-in">
+    <span class="eyebrow">New Collection · 2026</span>
+    <h1>Elegance in Every Detail</h1>
+    <p>Discover timeless jewelry, handcrafted with passion and precision — designed to be treasured for generations.</p>
+    <a href="shop.html" class="btn btn-primary">Shop Now</a>
+  </div>
+</section>
+
+<!-- Featured Collections -->
+<section class="section collections">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Curated For You</span>
+      <h2>Featured Collections</h2>
+    </div>
+    <div class="collection-grid">
+      <a href="shop.html?category=rings" class="collection-card">
+        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80" alt="Rings collection" loading="lazy" />
+        <div class="collection-info"><h3>Rings</h3><span>Explore ?</span></div>
+      </a>
+      <a href="shop.html?category=necklaces" class="collection-card">
+        <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=800&q=80" alt="Necklaces collection" loading="lazy" />
+        <div class="collection-info"><h3>Necklaces</h3><span>Explore ?</span></div>
+      </a>
+      <a href="shop.html?category=earrings" class="collection-card">
+        <img src="https://images.unsplash.com/photo-1630019852942-f89202989a59?w=800&q=80" alt="Earrings collection" loading="lazy" />
+        <div class="collection-info"><h3>Earrings</h3><span>Explore ?</span></div>
+      </a>
+      <a href="shop.html?category=bracelets" class="collection-card">
+        <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80" alt="Bracelets collection" loading="lazy" />
+        <div class="collection-info"><h3>Bracelets</h3><span>Explore ?</span></div>
+      </a>
+      <a href="shop.html?category=gold" class="collection-card">
+        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80" alt="Gold jewelry collection" loading="lazy" />
+        <div class="collection-info"><h3>Gold Jewelry</h3><span>Explore ?</span></div>
+      </a>
+      <a href="shop.html?category=personalized" class="collection-card">
+        <img src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=800&q=80" alt="Personalized jewelry" loading="lazy" />
+        <div class="collection-info"><h3>Personalized</h3><span>Explore ?</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Best Sellers -->
+<section class="section bestsellers">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Loved by Many</span>
+      <h2>Best Sellers</h2>
+    </div>
+    <div class="product-grid" id="bestSellersGrid"></div>
+    <div class="section-foot"><a href="shop.html" class="btn btn-outline">View All Products</a></div>
+  </div>
+</section>
+
+<!-- Promo Banner -->
+<section class="promo-banner">
+  <div class="promo-inner">
+    <div class="promo-text">
+      <span class="eyebrow light">Limited Edition</span>
+      <h2>The Aurora Collection</h2>
+      <p>Inspired by the first light of dawn — radiant gold, luminous pearls, and quiet sophistication.</p>
+      <a href="shop.html?collection=aurora" class="btn btn-light">Discover</a>
+    </div>
+  </div>
+</section>
+
+<!-- New Arrivals -->
+<section class="section new-arrivals">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Just Arrived</span>
+      <h2>New Arrivals</h2>
+    </div>
+    <div class="product-grid" id="newArrivalsGrid"></div>
+  </div>
+</section>
+
+<!-- Why Choose Nora -->
+<section class="section why-nora">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">The Nora Promise</span>
+      <h2>Why Choose Nora</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature">
+        <div class="feature-icon">?</div>
+        <h3>Ethically Sourced</h3>
+        <p>Every gem and metal is responsibly sourced from certified suppliers.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">?</div>
+        <h3>Handcrafted Quality</h3>
+        <p>Each piece is meticulously crafted by master artisans.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">?</div>
+        <h3>Lifetime Warranty</h3>
+        <p>We stand behind every piece with our lifetime care promise.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">?</div>
+        <h3>Complimentary Shipping</h3>
+        <p>Free insured delivery on all orders over $150 worldwide.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section testimonials">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Kind Words</span>
+      <h2>What Our Clients Say</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial">
+        <div class="stars">?????</div>
+        <p>"The Aurora necklace is breathtaking. The craftsmanship is beyond anything I've seen at this price point."</p>
+        <div class="author"><strong>Sophia M.</strong><span>Verified Buyer</span></div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">?????</div>
+        <p>"Packaging was exquisite, and the ring arrived even more beautiful than the photos. Truly a luxury experience."</p>
+        <div class="author"><strong>Isabella R.</strong><span>Verified Buyer</span></div>
+      </div>
+      <div class="testimonial">
+        <div class="stars">?????</div>
+        <p>"Nora has become my go-to for gifts. Every piece feels personal and timeless."</p>
+        <div class="author"><strong>Amelia K.</strong><span>Verified Buyer</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="section newsletter">
+  <div class="container">
+    <div class="newsletter-inner">
+      <h2>Join the Nora Circle</h2>
+      <p>Receive exclusive previews, private sale invitations, and 10% off your first order.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" placeholder="Your email address" required aria-label="Email address" />
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <h4 class="footer-logo">NORA</h4>
+      <p>Elegance in every detail. Timeless jewelry, handcrafted for you.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="Pinterest">PIN</a>
+        <a href="#" aria-label="TikTok">TT</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Shop</h5>
+      <ul>
+        <li><a href="shop.html?category=rings">Rings</a></li>
+        <li><a href="shop.html?category=necklaces">Necklaces</a></li>
+        <li><a href="shop.html?category=earrings">Earrings</a></li>
+        <li><a href="shop.html?category=bracelets">Bracelets</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Customer Care</h5>
+      <ul>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="shipping.html">Shipping & Delivery</a></li>
+        <li><a href="shipping.html#returns">Returns & Exchanges</a></li>
+        <li><a href="orders.html">Track Your Order</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>About</h5>
+      <ul>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="about.html#sustainability">Sustainability</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul class="contact-list">
+        <li>hello@nora-jewelry.com</li>
+        <li>+94 11 234 5678</li>
+        <li>Colombo, Sri Lanka</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© 2026 Nora Jewelry. All rights reserved.</p>
+      <p class="payment-methods">Visa · Mastercard · PayHere · Bank Transfer · COD</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // Populate best sellers and new arrivals on homepage
+  document.addEventListener('DOMContentLoaded', () => {
+    const best = NoraProducts.filter(p => p.bestseller).slice(0, 4);
+    const newA = NoraProducts.filter(p => p.isNew).slice(0, 4);
+    document.getElementById('bestSellersGrid').innerHTML = best.map(NoraUI.productCard).join('');
+    document.getElementById('newArrivalsGrid').innerHTML = newA.map(NoraUI.productCard).join('');
+  });
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shop All Jewelry — Nora</title>
+<meta name="description" content="Browse the full Nora collection of luxury rings, necklaces, earrings, bracelets, and personalized jewelry." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="announcement-bar">
+  <div class="container announcement-inner"><span>? Complimentary shipping on orders over $150 ?</span></div>
+</div>
+
+<header class="site-header" id="siteHeader">
+  <div class="container nav-container">
+    <button class="nav-toggle" aria-label="Open menu" id="navToggle"><span></span><span></span><span></span></button>
+    <a href="index.html" class="logo">NORA</a>
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html" class="active">Shop</a></li>
+        <li><a href="shop.html?collection=collections">Collections</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-icons">
+      <button class="icon-btn" aria-label="Search" id="searchToggle">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+      <a href="account.html" class="icon-btn" aria-label="Account">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </a>
+      <a href="cart.html" class="icon-btn cart-icon" aria-label="Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="shop-page">
+  <div class="container">
+    <div class="shop-head">
+      <h1 id="shopTitle">All Jewelry</h1>
+      <p id="shopCount" class="eyebrow"></p>
+    </div>
+
+    <div class="shop-layout">
+      <aside class="shop-sidebar" id="shopSidebar">
+        <div class="filter-group">
+          <h4>Category</h4>
+          <label><input type="radio" name="category" value="" checked /> All</label>
+          <label><input type="radio" name="category" value="rings" /> Rings</label>
+          <label><input type="radio" name="category" value="necklaces" /> Necklaces</label>
+          <label><input type="radio" name="category" value="earrings" /> Earrings</label>
+          <label><input type="radio" name="category" value="bracelets" /> Bracelets</label>
+          <label><input type="radio" name="category" value="gold" /> Gold Jewelry</label>
+          <label><input type="radio" name="category" value="personalized" /> Personalized</label>
+        </div>
+        <div class="filter-group">
+          <h4>Price Range</h4>
+          <label><input type="radio" name="price" value="" checked /> Any</label>
+          <label><input type="radio" name="price" value="0-100" /> Under $100</label>
+          <label><input type="radio" name="price" value="100-300" /> $100 – $300</label>
+          <label><input type="radio" name="price" value="300-1000" /> $300 – $1000</label>
+          <label><input type="radio" name="price" value="1000-99999" /> Over $1000</label>
+        </div>
+        <div class="filter-group">
+          <h4>Availability</h4>
+          <label><input type="checkbox" id="inStockOnly" /> In stock only</label>
+        </div>
+        <button class="btn btn-outline" id="clearFilters">Clear Filters</button>
+      </aside>
+
+      <div class="shop-main">
+        <div class="shop-toolbar">
+          <input type="search" id="shopSearch" placeholder="Search products..." aria-label="Search products" />
+          <select id="shopSort" aria-label="Sort products">
+            <option value="featured">Featured</option>
+            <option value="newest">Newest</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="popular">Most Popular</option>
+          </select>
+        </div>
+        <div class="product-grid" id="shopGrid"></div>
+        <div class="empty-state hidden" id="emptyShop">
+          <h3>No products found</h3>
+          <p>Try adjusting your filters or search term.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-bottom">
+    <p>© 2026 Nora Jewelry. All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script src="js/shop.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title id="productTitle">Product — Nora</title>
+<meta name="description" id="productDesc" content="Luxury jewelry from Nora." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="announcement-bar">
+  <div class="container announcement-inner"><span>? Complimentary shipping on orders over $150 ?</span></div>
+</div>
+
+<header class="site-header" id="siteHeader">
+  <div class="container nav-container">
+    <button class="nav-toggle" aria-label="Open menu" id="navToggle"><span></span><span></span><span></span></button>
+    <a href="index.html" class="logo">NORA</a>
+    <nav class="main-nav" id="mainNav"><ul>
+      <li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li>
+      <li><a href="shop.html?collection=collections">Collections</a></li>
+      <li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li>
+    </ul></nav>
+    <div class="nav-icons">
+      <button class="icon-btn" id="searchToggle" aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+      <a href="account.html" class="icon-btn" aria-label="Account">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </a>
+      <a href="cart.html" class="icon-btn cart-icon" aria-label="Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="product-page" id="productPage">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a> / <a href="shop.html">Shop</a> / <span id="breadcrumbName">Product</span>
+    </nav>
+
+    <div class="product-layout">
+      <div class="product-gallery">
+        <div class="gallery-main">
+          <img id="mainImage" src="" alt="" />
+        </div>
+        <div class="gallery-thumbs" id="galleryThumbs"></div>
+      </div>
+
+      <div class="product-info">
+        <span class="eyebrow" id="productCategory"></span>
+        <h1 id="productName"></h1>
+        <div class="product-price">
+          <span class="price-current" id="productPrice"></span>
+          <span class="price-old" id="productOldPrice"></span>
+        </div>
+        <div class="product-rating" id="productRating"></div>
+        <p class="product-description" id="productDescription"></p>
+
+        <div class="product-options">
+          <div class="option-group" id="sizeGroup">
+            <label>Size</label>
+            <div class="size-options" id="sizeOptions"></div>
+          </div>
+          <div class="option-group">
+            <label>Quantity</label>
+            <div class="quantity-selector">
+              <button type="button" id="qtyMinus" aria-label="Decrease quantity">-</button>
+              <input type="number" id="qtyInput" value="1" min="1" aria-label="Quantity" />
+              <button type="button" id="qtyPlus" aria-label="Increase quantity">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-actions">
+          <button class="btn btn-primary btn-lg" id="addToCartBtn">Add to Cart</button>
+          <button class="btn btn-outline btn-lg" id="buyNowBtn">Buy Now</button>
+          <button class="icon-btn wishlist-btn" id="wishlistBtn" aria-label="Add to wishlist">?</button>
+        </div>
+
+        <div class="product-meta">
+          <div><strong>Material:</strong> <span id="productMaterial"></span></div>
+          <div><strong>Availability:</strong> <span id="productStock"></span></div>
+          <div><strong>SKU:</strong> <span id="productSku"></span></div>
+        </div>
+
+        <div class="product-tabs">
+          <button class="tab active" data-tab="details">Details</button>
+          <button class="tab" data-tab="care">Care</button>
+          <button class="tab" data-tab="shipping">Shipping</button>
+          <div class="tab-content active" id="tab-details">
+            <p>Crafted with meticulous attention to detail, this piece embodies the Nora philosophy: timeless elegance for the modern woman. Each item is individually inspected for quality.</p>
+          </div>
+          <div class="tab-content" id="tab-care">
+            <p>Store in the provided Nora pouch. Avoid contact with perfumes, lotions, and water. Gently polish with a soft cloth.</p>
+          </div>
+          <div class="tab-content" id="tab-shipping">
+            <p>Complimentary insured shipping on orders over $150. See our <a href="shipping.html">Shipping Policy</a> for details.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section related">
+      <div class="section-head"><h2>You May Also Like</h2></div>
+      <div class="product-grid" id="relatedGrid"></div>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-bottom"><p>© 2026 Nora Jewelry. All rights reserved.</p></div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script>
+(function(){
+  const params = new URLSearchParams(location.search);
+  const id = params.get('id');
+  const product = NoraProducts.find(p => p.id == id);
+  if (!product) {
+    document.querySelector('.product-layout').innerHTML = '<p>Product not found. <a href="shop.html">Return to shop</a></p>';
+    return;
+  }
+
+  document.title = `${product.name} — Nora`;
+  document.getElementById('productTitle').textContent = document.title;
+  document.getElementById('productDesc').setAttribute('content', product.description);
+  document.getElementById('breadcrumbName').textContent = product.name;
+  document.getElementById('productCategory').textContent = product.category.toUpperCase();
+  document.getElementById('productName').textContent = product.name;
+  document.getElementById('productPrice').textContent = `$${product.price.toFixed(2)}`;
+  document.getElementById('productOldPrice').textContent = product.oldPrice ? `$${product.oldPrice.toFixed(2)}` : '';
+  document.getElementById('productDescription').textContent = product.description;
+  document.getElementById('productMaterial').textContent = product.material || '—';
+  document.getElementById('productSku').textContent = product.sku || '—';
+  const inStock = product.stock > 0;
+  document.getElementById('productStock').textContent = inStock ? `In Stock (${product.stock})` : 'Out of Stock';
+  document.getElementById('productStock').className = inStock ? 'in-stock' : 'out-of-stock';
+
+  // Rating
+  const rating = product.rating || 4.8;
+  document.getElementById('productRating').innerHTML = '?'.repeat(Math.round(rating)) + '?'.repeat(5 - Math.round(rating)) + ` <span>(${product.reviews || 0} reviews)</span>`;
+
+  // Gallery
+  const images = product.images || [product.image];
+  const mainImg = document.getElementById('mainImage');
+  mainImg.src = images[0];
+  mainImg.alt = product.name;
+  const thumbs = document.getElementById('galleryThumbs');
+  thumbs.innerHTML = images.map((img, i) => `<button data-img="${img}" aria-label="View image ${i+1}"><img src="${img}" alt="" /></button>`).join('');
+  thumbs.addEventListener('click', e => {
+    const btn = e.target.closest('button');
+    if (!btn) return;
+    mainImg.src = btn.dataset.img;
+    thumbs.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
+  if (thumbs.firstChild) thumbs.firstChild.classList.add('active');
+
+  // Sizes
+  const sizeGroup = document.getElementById('sizeGroup');
+  const sizeOptions = document.getElementById('sizeOptions');
+  if (product.sizes && product.sizes.length) {
+    sizeOptions.innerHTML = product.sizes.map(s => `<button type="button" data-size="${s}">${s}</button>`).join('');
+    let selectedSize = null;
+    sizeOptions.addEventListener('click', e => {
+      if (e.target.tagName !== 'BUTTON') return;
+      sizeOptions.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+      e.target.classList.add('active');
+      selectedSize = e.target.dataset.size;
+    });
+    window.__selectedSize = () => selectedSize;
+  } else {
+    sizeGroup.style.display = 'none';
+    window.__selectedSize = () => null;
+  }
+
+  // Quantity
+  const qtyInput = document.getElementById('qtyInput');
+  document.getElementById('qtyMinus').onclick = () => qtyInput.value = Math.max(1, +qtyInput.value - 1);
+  document.getElementById('qtyPlus').onclick = () => qtyInput.value = Math.min(product.stock, +qtyInput.value + 1);
+
+  // Add to cart
+  document.getElementById('addToCartBtn').onclick = () => {
+    if (!inStock) return NoraUI.toast('This item is out of stock', 'error');
+    const size = window.__selectedSize();
+    if (product.sizes && product.sizes.length && !size) return NoraUI.toast('Please select a size', 'error');
+    NoraCart.add(product.id, +qtyInput.value, size);
+    NoraUI.toast(`${product.name} added to cart`);
+  };
+  document.getElementById('buyNowBtn').onclick = () => {
+    if (!inStock) return NoraUI.toast('This item is out of stock', 'error');
+    const size = window.__selectedSize();
+    if (product.sizes && product.sizes.length && !size) return NoraUI.toast('Please select a size', 'error');
+    NoraCart.add(product.id, +qtyInput.value, size);
+    location.href = 'checkout.html';
+  };
+
+  // Wishlist
+  const wishlistBtn = document.getElementById('wishlistBtn');
+  const updateWish = () => wishlistBtn.textContent = NoraWishlist.has(product.id) ? '?' : '?';
+  updateWish();
+  wishlistBtn.onclick = () => {
+    if (NoraWishlist.has(product.id)) { NoraWishlist.remove(product.id); NoraUI.toast('Removed from wishlist'); }
+    else { NoraWishlist.add(product.id); NoraUI.toast('Added to wishlist'); }
+    updateWish();
+  };
+
+  // Tabs
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.onclick = () => {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+    };
+  });
+
+  // Related
+  const related = NoraProducts.filter(p => p.category === product.category && p.id !== product.id).slice(0, 4);
+  document.getElementById('relatedGrid').innerHTML = related.map(NoraUI.productCard).join('');
+})();
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shopping Cart — Nora</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="announcement-bar"><div class="container announcement-inner"><span>? Complimentary shipping on orders over $150 ?</span></div></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="container nav-container">
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <a href="index.html" class="logo">NORA</a>
+    <nav class="main-nav" id="mainNav"><ul>
+      <li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li>
+      <li><a href="shop.html?collection=collections">Collections</a></li>
+      <li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li>
+    </ul></nav>
+    <div class="nav-icons">
+      <button class="icon-btn" id="searchToggle" aria-label="Search">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      </button>
+      <a href="account.html" class="icon-btn" aria-label="Account">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </a>
+      <a href="cart.html" class="icon-btn cart-icon" aria-label="Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="cart-page">
+  <div class="container">
+    <h1>Shopping Cart</h1>
+    <div id="cartContent"></div>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="container footer-bottom"><p>© 2026 Nora Jewelry. All rights reserved.</p></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script>
+function renderCart() {
+  const items = NoraCart.items();
+  const container = document.getElementById('cartContent');
+  if (!items.length) {
+    container.innerHTML = `
+      <div class="empty-state">
+        <h2>Your cart is empty</h2>
+        <p>Discover our timeless collections and find something you'll love.</p>
+        <a href="shop.html" class="btn btn-primary">Continue Shopping</a>
+      </div>`;
+    return;
+  }
+  const subtotal = items.reduce((s, i) => s + i.price * i.qty, 0);
+  const shipping = subtotal >= (NoraConfig.freeShippingThreshold || 150) ? 0 : NoraConfig.shippingFees.standard;
+  const total = subtotal + shipping;
+
+  container.innerHTML = `
+    <div class="cart-layout">
+      <div class="cart-items">
+        ${items.map(i => `
+          <div class="cart-item">
+            <img src="${i.image}" alt="${i.name}" />
+            <div class="cart-item-info">
+              <h3><a href="product.html?id=${i.id}">${i.name}</a></h3>
+              ${i.size ? `<p class="muted">Size: ${i.size}</p>` : ''}
+              <p class="price">$${i.price.toFixed(2)}</p>
+            </div>
+            <div class="cart-item-qty">
+              <div class="quantity-selector">
+                <button data-action="dec" data-key="${i.key}">-</button>
+                <input type="number" value="${i.qty}" min="1" data-key="${i.key}" />
+                <button data-action="inc" data-key="${i.key}">+</button>
+              </div>
+              <button class="remove-btn" data-action="remove" data-key="${i.key}">Remove</button>
+            </div>
+            <div class="cart-item-total">$${(i.price * i.qty).toFixed(2)}</div>
+          </div>
+        `).join('')}
+      </div>
+      <aside class="cart-summary">
+        <h3>Order Summary</h3>
+        <div class="summary-row"><span>Subtotal</span><span>$${subtotal.toFixed(2)}</span></div>
+        <div class="summary-row"><span>Shipping</span><span>${shipping === 0 ? 'FREE' : '$' + shipping.toFixed(2)}</span></div>
+        <div class="discount-row">
+          <input type="text" id="discountCode" placeholder="Discount code" />
+          <button class="btn btn-outline" id="applyDiscount">Apply</button>
+        </div>
+        <div class="summary-row total"><span>Total</span><span>$${total.toFixed(2)}</span></div>
+        <a href="checkout.html" class="btn btn-primary btn-lg btn-full">Proceed to Checkout</a>
+        <a href="shop.html" class="btn-link">Continue Shopping</a>
+      </aside>
+    </div>`;
+
+  container.querySelectorAll('[data-action]').forEach(btn => {
+    btn.onclick = () => {
+      const key = btn.dataset.key;
+      const action = btn.dataset.action;
+      if (action === 'inc') NoraCart.updateQty(key, NoraCart.items().find(i => i.key === key).qty + 1);
+      else if (action === 'dec') NoraCart.updateQty(key, NoraCart.items().find(i => i.key === key).qty - 1);
+      else if (action === 'remove') NoraCart.remove(key);
+      renderCart();
+    };
+  });
+  container.querySelectorAll('.quantity-selector input').forEach(inp => {
+    inp.onchange = () => {
+      NoraCart.updateQty(inp.dataset.key, Math.max(1, +inp.value));
+      renderCart();
+    };
+  });
+
+  const applyBtn = document.getElementById('applyDiscount');
+  if (applyBtn) applyBtn.onclick = () => {
+    const code = document.getElementById('discountCode').value.trim();
+    const result = NoraCart.applyDiscount(code);
+    NoraUI.toast(result.message, result.success ? 'success' : 'error');
+    if (result.success) renderCart();
+  };
+}
+document.addEventListener('DOMContentLoaded', renderCart);
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Checkout — Nora</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="announcement-bar"><div class="container announcement-inner"><span>? Secure Checkout ?</span></div></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="container nav-container">
+    <a href="index.html" class="logo">NORA</a>
+    <nav class="main-nav" id="mainNav"><ul>
+      <li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li>
+      <li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main class="checkout-page">
+  <div class="container">
+    <h1>Checkout</h1>
+    <div id="checkoutContent"></div>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="container footer-bottom"><p>© 2026 Nora Jewelry. All rights reserved.</p></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Account — Nora</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="announcement-bar"><div class="container announcement-inner"><span>? Complimentary shipping on orders over $150 ?</span></div></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="container nav-container">
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <a href="index.html" class="logo">NORA</a>
+    <nav class="main-nav" id="mainNav"><ul>
+      <li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li>
+      <li><a href="shop.html?collection=collections">Collections</a></li>
+      <li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li>
+    </ul></nav>
+    <div class="nav-icons">
+      <a href="cart.html" class="icon-btn cart-icon" aria-label="Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="account-page">
+  <div class="container">
+    <div id="accountContent"></div>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="container footer-bottom"><p>© 2026 Nora Jewelry. All rights reserved.</p></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script src="js/account.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Track Your Order — Nora</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="announcement-bar"><div class="container announcement-inner"><span>? Complimentary shipping on orders over $150 ?</span></div></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="container nav-container">
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <a href="index.html" class="logo">NORA</a>
+    <nav class="main-nav" id="mainNav"><ul>
+      <li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li>
+      <li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li>
+    </ul></nav>
+    <div class="nav-icons">
+      <a href="cart.html" class="icon-btn cart-icon" aria-label="Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="orders-page">
+  <div class="container">
+    <h1>Track Your Order</h1>
+    <form id="trackForm" class="track-form">
+      <label>Order Number
+        <input type="text" name="orderNumber" placeholder="e.g. NORA-2026-0001" required />
+      </label>
+      <label>Email or Phone
+        <input type="text" name="contact" placeholder="Your email or phone" required />
+      </label>
+      <button type="submit" class="btn btn-primary">Track Order</button>
+    </form>
+    <div id="trackResult"></div>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="container footer-bottom"><p>© 2026 Nora Jewelry. All rights reserved.</p></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script>
+document.getElementById('trackForm').onsubmit = async (e) => {
+  e.preventDefault();
+  const fd = new FormData(e.target);
+  const result = document.getElementById('trackResult');
+  result.innerHTML = '<p class="loading">Looking up your order...</p>';
+
+  // Demo mode: simulate tracking
+  const demoOrder = {
+    orderNumber: fd.get('orderNumber'),
+    status: 'Shipped',
+    placedAt: new Date(Date.now() - 5 * 86400000).toLocaleDateString(),
+    estimatedDelivery: new Date(Date.now() + 2 * 86400000).toLocaleDateString(),
+    trackingNumber: 'LK1234567890',
+    items: [{ name: 'Sample Item', qty: 1, price: 199 }]
+  };
+
+  // If backend is configured, fetch real data
+  try {
+    if (window.NoraConfig && NoraConfig.apiBase) {
+      const res = await fetch(`${NoraConfig.apiBase}/orders/track`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ orderNumber: fd.get('orderNumber'), contact: fd.get('contact') })
+      });
+      if (res.ok) {
+        const data = await res.json();
+        renderTrack(data);
+        return;
+      }
+    }
+  } catch (err) { /* fall through to demo */ }
+
+  renderTrack(demoOrder);
+
+  function renderTrack(o) {
+    const steps = ['Pending', 'Confirmed', 'Processing', 'Shipped', 'Delivered'];
+    const currentIdx = steps.indexOf(o.status);
+    result.innerHTML = `
+      <div class="order-track-card">
+        <h2>Order ${o.orderNumber}</h2>
+        <p class="muted">Placed on ${o.placedAt}</p>
+        <p><strong>Status:</strong> <span class="status-badge">${o.status}</span></p>
+        <p><strong>Estimated Delivery:</strong> ${o.estimatedDelivery}</p>
+        ${o.trackingNumber ? `<p><strong>Tracking:</strong> ${o.trackingNumber}</p>` : ''}
+        <div class="order-steps">
+          ${steps.map((s, i) => `<div class="step ${i <= currentIdx ? 'done' : ''}">${s}</div>`).join('')}
+        </div>
+      </div>`;
+  }
+};
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact Us — Nora</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="announcement-bar"><div class="container announcement-inner"><span>? We'd love to hear from you ?</span></div></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="container nav-container">
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <a href="index.html" class="logo">NORA</a>
+    <nav class="main-nav" id="mainNav"><ul>
+      <li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li>
+      <li><a href="shop.html?collection=collections">Collections</a></li>
+      <li><a href="about.html">About Us</a></li><li><a href="contact.html" class="active">Contact</a></li>
+    </ul></nav>
+    <div class="nav-icons">
+      <a href="cart.html" class="icon-btn cart-icon" aria-label="Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="contact-page">
+  <div class="container">
+    <div class="contact-layout">
+      <div class="contact-info">
+        <h1>Get in Touch</h1>
+        <p>Our client care team is here to help with any questions about our jewelry, orders, or services.</p>
+        <ul>
+          <li><strong>Email:</strong> hello@nora-jewelry.com</li>
+          <li><strong>Phone:</strong> +94 11 234 5678</li>
+          <li><strong>Hours:</strong> Mon–Sat, 9:00 AM – 6:00 PM (SLT)</li>
+          <li><strong>Address:</strong> 42 Galle Face Terrace, Colombo 03, Sri Lanka</li>
+        </ul>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <label>Full Name<input type="text" name="name" required /></label>
+        <label>Email<input type="email" name="email" required /></label>
+        <label>Subject<input type="text" name="subject" required /></label>
+        <label>Message<textarea name="message" rows="5" required></textarea></label>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="container footer-bottom"><p>© 2026 Nora Jewelry. All rights reserved.</p></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script>
+document.getElementById('contactForm').onsubmit = async (e) => {
+  e.preventDefault();
+  const fd = new FormData(e.target);
+  const data = Object.fromEntries(fd);
+  try {
+    if (window.NoraConfig && NoraConfig.apiBase) {
+      const res = await fetch(`${NoraConfig.apiBase}/contact`, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (!res.ok) throw new Error();
+    }
+  } catch (err) { /* demo mode */ }
+  NoraUI.toast('Thank you! We\'ll be in touch soon.');
+  e.target.reset();
+};
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About Nora — Our Story</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="announcement-bar"><div class="container announcement-inner"><span>? Elegance in Every Detail ?</span></div></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="container nav-container">
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <a href="index.html" class="logo">NORA</a>
+    <nav class="main-nav" id="mainNav"><ul>
+      <li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li>
+      <li><a href="shop.html?collection=collections">Collections</a></li>
+      <li><a href="about.html" class="active">About Us</a></li><li><a href="contact.html">Contact</a></li>
+    </ul></nav>
+    <div class="nav-icons">
+      <a href="cart.html" class="icon-btn cart-icon" aria-label="Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="about-page">
+  <section class="about-hero">
+    <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=1800&q=80" alt="Jewelry atelier" />
+    <div class="about-hero-text">
+      <h1>Our Story</h1>
+      <p>Born from a love of timeless beauty and quiet luxury.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container about-content">
+      <h2>Crafted with Intention</h2>
+      <p>Nora was founded on a simple belief: jewelry should be more than adornment — it should be a companion, a memory, a quiet statement of who you are. Every piece in our collection is designed in our Colombo atelier and brought to life by master artisans who share our devotion to craft.</p>
+      <p>We work with ethically sourced gold, responsibly mined gemstones, and sustainable packaging — because true luxury leaves no trace but beauty.</p>
+    </div>
+  </section>
+
+  <section class="section" id="sustainability">
+    <div class="container about-content">
+      <h2>Our Commitment</h2>
+      <div class="features-grid">
+        <div class="feature"><div class="feature-icon">?</div><h3>Ethical Sourcing</h3><p>Every stone and metal is traceable and responsibly sourced.</p></div>
+        <div class="feature"><div class="feature-icon">?</div><h3>Artisan Craft</h3><p>Handmade by skilled artisans in our Colombo atelier.</p></div>
+        <div class="feature"><div class="feature-icon">?</div><h3>Sustainable Packaging</h3><p>Recyclable, plastic-free packaging for every order.</p></div>
+        <div class="feature"><div class="feature-icon">?</div><h3>Lifetime Care</h3><p>Complimentary cleaning and polishing for life.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer"><div class="container footer-bottom"><p>© 2026 Nora Jewelry. All rights reserved.</p></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shipping & Returns — Nora</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="announcement-bar"><div class="container announcement-inner"><span>? Complimentary shipping on orders over $150 ?</span></div></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="container nav-container">
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <a href="index.html" class="logo">NORA</a>
+    <nav class="main-nav" id="mainNav"><ul>
+      <li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li>
+      <li><a href="shop.html?collection=collections">Collections</a></li>
+      <li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li>
+    </ul></nav>
+    <div class="nav-icons">
+      <a href="cart.html" class="icon-btn cart-icon" aria-label="Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="policy-page">
+  <div class="container">
+    <h1>Shipping & Delivery</h1>
+
+    <section>
+      <h2>Delivery Options</h2>
+      <table class="policy-table">
+        <thead><tr><th>Method</th><th>Destination</th><th>Delivery Time</th><th>Fee</th></tr></thead>
+        <tbody>
+          <tr><td>Standard</td><td>Sri Lanka</td><td>2–4 business days</td><td>$8</td></tr>
+          <tr><td>Express</td><td>Sri Lanka</td><td>1–2 business days</td><td>$15</td></tr>
+          <tr><td>International Standard</td><td>Worldwide</td><td>7–14 business days</td><td>$25</td></tr>
+          <tr><td>International Express</td><td>Worldwide</td><td>3–6 business days</td><td>$45</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Free shipping</strong> is available on all orders over <span id="freeShipThreshold">$150</span>.</p>
+    </section>
+
+    <section id="returns">
+      <h2>Returns & Exchanges</h2>
+      <p>We accept returns within 14 days of delivery for unworn items in original packaging with tags attached. Personalized jewelry is final sale.</p>
+      <p>To initiate a return, please contact <a href="mailto:hello@nora-jewelry.com">hello@nora-jewelry.com</a> with your order number.</p>
+    </section>
+
+    <section>
+      <h2>Order Tracking</h2>
+      <p>Once your order ships, you'll receive a tracking number by email. You can also <a href="orders.html">track your order here</a>.</p>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer"><div class="container footer-bottom"><p>© 2026 Nora Jewelry. All rights reserved.</p></div></footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.getElementById('freeShipThreshold').textContent = '$' + (NoraConfig.freeShippingThreshold || 150);
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin Dashboard — Nora</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="admin-body">
+
+<div class="admin-layout">
+  <aside class="admin-sidebar">
+    <h2 class="admin-logo">NORA<br><span>Admin</span></h2>
+    <nav>
+      <button data-view="dashboard" class="active">Dashboard</button>
+      <button data-view="products">Products</button>
+      <button data-view="orders">Orders</button>
+      <button data-view="customers">Customers</button>
+      <button data-view="discounts">Discounts</button>
+      <button data-view="settings">Settings</button>
+      <button id="adminLogout" class="logout-btn">Log Out</button>
+    </nav>
+  </aside>
+
+  <main class="admin-main">
+    <header class="admin-header">
+      <h1 id="adminTitle">Dashboard</h1>
+      <div class="admin-user">Admin · <a href="index.html">View Store</a></div>
+    </header>
+    <div id="adminContent"></div>
+  </main>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/main.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
+
+
+              <script>
+                              /* =========================================================
+   Nora — Product Data
+   Edit this file to add/remove/modify products.
+   In production, replace with API calls to your backend.
+   ========================================================= */
+
+const NoraProducts = [
+  {
+    id: 1,
+    name: 'Aurora Gold Ring',
+    slug: 'aurora-gold-ring',
+    category: 'rings',
+    collection: 'aurora',
+    price: 485,
+    oldPrice: null,
+    description: 'A radiant 18k gold ring featuring a delicate band with a luminous central setting. Handcrafted in our Colombo atelier.',
+    material: '18k Yellow Gold',
+    sizes: ['5', '6', '7', '8', '9'],
+    stock: 12,
+    sku: 'NOR-RG-001',
+    image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80',
+      'https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=800&q=80',
+      'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=800&q=80'
+    ],
+    rating: 4.9,
+    reviews: 128,
+    bestseller: true,
+    isNew: false,
+    featured: true
+  },
+  {
+    id: 2,
+    name: 'Celestine Pearl Necklace',
+    slug: 'celestine-pearl-necklace',
+    category: 'necklaces',
+    collection: 'aurora',
+    price: 620,
+    oldPrice: 720,
+    description: 'Freshwater pearls suspended on a fine gold chain. A timeless piece for every occasion.',
+    material: '14k Gold, Freshwater Pearls',
+    sizes: ['16"', '18"', '20"'],
+    stock: 8,
+    sku: 'NOR-NK-002',
+    image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=800&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=800&q=80',
+      'https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=800&q=80'
+    ],
+    rating: 4.8,
+    reviews: 96,
+    bestseller: true,
+    isNew: false,
+    featured: true
+  },
+  {
+    id: 3,
+    name: 'Lumière Diamond Earrings',
+    slug: 'lumiere-diamond-earrings',
+    category: 'earrings',
+    collection: 'lumiere',
+    price: 1250,
+    oldPrice: null,
+    description: 'Brilliant-cut diamonds set in platinum. The epitome of understated luxury.',
+    material: 'Platinum, Diamonds (0.5ct total)',
+    sizes: null,
+    stock: 5,
+    sku: 'NOR-ER-003',
+    image: 'https://images.unsplash.com/photo-1630019852942-f89202989a59?w=800&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1630019852942-f89202989a59?w=800&q=80',
+      'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&q=80'
+    ],
+    rating: 5.0,
+    reviews: 42,
+    bestseller: true,
+    isNew: true,
+    featured: true
+  },
+  {
+    id: 4,
+    name: 'Seraphine Gold Bracelet',
+    slug: 'seraphine-gold-bracelet',
+    category: 'bracelets',
+    collection: 'seraphine',
+    price: 395,
+    oldPrice: null,
+    description: 'A delicate chain bracelet with a signature Nora clasp. Stackable and elegant.',
+    material: '14k Yellow Gold',
+    sizes: ['6.5"', '7"', '7.5"'],
+    stock: 15,
+    sku: 'NOR-BR-004',
+    image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80'
+    ],
+    rating: 4.7,
+    reviews: 74,
+    bestseller: true,
+    isNew: false,
+    featured: true
+  },
+  {
+    id: 5,
+    name: 'Étoile Sapphire Ring',
+    slug: 'etoile-sapphire-ring',
+    category: 'rings',
+    collection: 'etoile',
+    price: 1890,
+    oldPrice: null,
+    description: 'A deep blue sapphire surrounded by a halo of diamonds. A statement of quiet luxury.',
+    material: '18k White Gold, Sapphire, Diamonds',
+    sizes: ['5', '6', '7', '8'],
+    stock: 3,
+    sku: 'NOR-RG-005',
+    image: 'https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=800&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=800&q=80'
+    ],
+    rating: 4.9,
+    reviews: 28,
+    bestseller: false,
+    isNew: true,
+    featured: true
+  },
+  {
+    id: 6,
+    name: 'Monogram Initial Necklace',
+    slug: 'monogram-initial-necklace',
+    category: 'personalized',
+    collection: 'personalized',
+    price: 245,
+    oldPrice: null,
+    description: 'Your initial, hand-engraved on a solid gold disc. A personal treasure.',
+    material: '14k Solid Gold',
+    sizes: ['16"', '18"'],
+    stock: 20,
+    sku: 'NOR-NK-006',
+    image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80'
+    ],
+    rating: 4.8,
+    reviews: 156,
+    bestseller: true,
+    isNew: false,
+    featured: true
+  },
+  {
+    id: 7,
+    name: 'Rosé Gold Hoop Earrings',
+    slug: 'rose-gold-hoop-earrings',
+    category: 'earrings',
+    collection: 'rose',
+    price: 320,
+    oldPrice: 380,
+    description: 'Classic hoops reimagined in warm rose gold. An everyday essential.',
+    material: '14k Rose Gold',
+    sizes: null,
+    stock: 18,
+    sku: 'NOR-ER-007',
+    image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=800&q=80'
+    ],
+    rating: 4.6,
+    reviews: 89,
+    bestseller: false,
+    isNew: false,
+    featured: false
+  },
+  {
+    id: 8,
+    name: 'Heritage Chain Necklace',
+    slug: 'heritage-chain-necklace',
+    category: 'necklaces',
+    collection: 'heritage',
+    price: 540,
+    oldPrice: null,
+    description: 'A substantial gold chain with a timeless presence. Wear alone or layered.',
+    material: '18k Yellow Gold',
+    sizes: ['18"', '20"', '22"'],
+    stock: 7,
+    sku: 'NOR-NK-008',
+    image: 'https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=800&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1611652022419-a9419f74343d?w=800&q=80'
+    ],
+    rating: 4.9,
+    reviews: 63,
+    bestseller: false,
+    isNew: true,
+    featured: false
+  },
+  {
+    id: 9,
+    name: 'Solitaire Engagement Ring',
+    slug: 'solitaire-engagement-ring',
+    category: 'rings',
+    collection: 'eternal',
+    price: 3450,
+    oldPrice: null,
+    description: 'A brilliant round diamond set in a classic six-prong platinum setting. For forever.',
+    material: 'Platinum, Diamond (1.0ct)',
+    sizes: ['5', '6', '7', '8', '9'],
+    stock: 4,
+    sku: 'NOR-RG-009',
+    image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80'
+    ],
+    rating: 5.0,
+    reviews: 34,
+    bestseller: false,
+    isNew: false,
+    featured: true
+  },
+  {
+    id: 10,
+    name: 'Tennis Diamond Bracelet',
+    slug: 'tennis-diamond-bracelet',
+    category: 'bracelets',
+    collection: 'eternal',
+    price: 2180,
+    oldPrice: null,
+    description: 'A continuous line of brilliant diamonds. The ultimate expression of elegance.',
+    material: '18k White Gold, Diamonds (3.0ct)',
+    sizes: ['6.5"', '7"', '7.5"'],
+    stock: 2,
+    sku: 'NOR-BR-010',
+    image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80'
+    ],
+    rating: 4.9,
+    reviews: 19,
+    bestseller: false,
+    isNew: true,
+    featured: true
+  },
+  {
+    id: 11,
+    name: 'Engraved Bar Necklace',
+    slug: 'engraved-bar-necklace',
+    category: 'personalized',
+    collection: 'personalized',
+    price: 185,
+    oldPrice: null,
+    description: 'A slim gold bar engraved with up to 10 characters. A whispered sentiment.',
+    material: '14k Gold Vermeil',
+    sizes: ['16"', '18"'],
+    stock: 25,
+    sku: 'NOR-NK-011',
+    image: 'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=800&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1573408301185-9146fe634ad0?w=800&q=80'
+    ],
+    rating: 4.7,
+    reviews: 201,
+    bestseller: true,
+    isNew: false,
+    featured: false
+  },
+  {
+    id: 12,
+    name: 'Twisted Gold Bangle',
+    slug: 'twisted-gold-bangle',
+    category: 'bracelets',
+    collection: 'rose',
+    price: 425,
+    oldPrice: null,
+    description: 'A sculptural twisted bangle in polished gold. Modern, bold, effortless.',
+    material: '14k Yellow Gold',
+    sizes: ['S', 'M', 'L'],
+    stock: 10,
+    sku: 'NOR-BR-012',
+    image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80',
+    images: [
+      'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80'
+    ],
+    rating: 4.8,
+    reviews: 52,
+    bestseller: false,
+    isNew: true,
+    featured: false
+  }
+];
+
+/* Configurable store settings (edit these freely) */
+const NoraConfig = {
+  freeShippingThreshold: 150,
+  currency: 'USD',
+  currencySymbol: '$',
+  shippingFees: {
+    standard: 8,
+    express: 15,
+    internationalStandard: 25,
+    internationalExpress: 45
+  },
+  deliveryEstimates: {
+    standard: { min: 2, max: 4 },
+    express: { min: 1, max: 2 },
+    internationalStandard: { min: 7, max: 14 },
+    internationalExpress: { min: 3, max: 6 }
+  },
+  taxRate: 0, // set to e.g. 0.12 for 12% VAT
+  supportedCountries: [
+    { code: 'LK', name: 'Sri Lanka', local: true },
+    { code: 'US', name: 'United States', local: false },
+    { code: 'GB', name: 'United Kingdom', local: false },
+    { code: 'AU', name: 'Australia', local: false },
+    { code: 'CA', name: 'Canada', local: false },
+    { code: 'SG', name: 'Singapore', local: false },
+    { code: 'AE', name: 'United Arab Emirates', local: false }
+  ],
+  discounts: {
+    'NORA10': { type: 'percent', value: 10, description: '10% off' },
+    'WELCOME': { type: 'fixed', value: 20, description: '$20 off' },
+    'AURORA25': { type: 'percent', value: 25, description: '25% off Aurora collection' }
+  },
+  // Backend API base. Leave empty for demo mode.
+  apiBase: '' // e.g. 'http://localhost:3000/api'
+};
+
+/* =========================================================
+   Nora — Cart, Wishlist, UI Helpers
+   Uses localStorage for demo persistence.
+   ========================================================= */
+
+const NoraCart = {
+  KEY: 'nora_cart_v1',
+  WISH_KEY: 'nora_wishlist_v1',
+  DISCOUNT_KEY: 'nora_discount_v1',
+
+  items() {
+    try { return JSON.parse(localStorage.getItem(this.KEY)) || []; }
+    catch { return []; }
+  },
+  save(items) {
+    localStorage.setItem(this.KEY, JSON.stringify(items));
+    this.updateCount();
+  },
+  add(productId, qty = 1, size = null) {
+    const product = NoraProducts.find(p => p.id == productId);
+    if (!product) return false;
+    const items = this.items();
+    const key = `${productId}_${size || 'nosize'}`;
+    const existing = items.find(i => i.key === key);
+    if (existing) {
+      existing.qty = Math.min(product.stock, existing.qty + qty);
+    } else {
+      items.push({
+        key,
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        size,
+        qty: Math.min(product.stock, qty)
+      });
+    }
+    this.save(items);
+    return true;
+  },
+  updateQty(key, qty) {
+    const items = this.items();
+    const item = items.find(i => i.key === key);
+    if (!item) return;
+    const product = NoraProducts.find(p => p.id === item.id);
+    if (qty <= 0) { this.remove(key); return; }
+    item.qty = Math.min(product ? product.stock : qty, qty);
+    this.save(items);
+  },
+  remove(key) {
+    const items = this.items().filter(i => i.key !== key);
+    this.save(items);
+  },
+  clear() {
+    localStorage.removeItem(this.KEY);
+    localStorage.removeItem(this.DISCOUNT_KEY);
+    this.updateCount();
+  },
+  updateCount() {
+    const count = this.items().reduce((s, i) => s + i.qty, 0);
+    document.querySelectorAll('#cartCount').forEach(el => el.textContent = count);
+  },
+  subtotal() {
+    return this.items().reduce((s, i) => s + i.price * i.qty, 0);
+  },
+  applyDiscount(code) {
+    const d = NoraConfig.discounts[(code || '').toUpperCase()];
+    if (!d) return { success: false, message: 'Invalid discount code' };
+    localStorage.setItem(this.DISCOUNT_KEY, JSON.stringify({ code: code.toUpperCase(), ...d }));
+    return { success: true, message: `Discount applied: ${d.description}` };
+  },
+  getDiscount() {
+    try { return JSON.parse(localStorage.getItem(this.DISCOUNT_KEY)); }
+    catch { return null; }
+  },
+  calculateShipping(method = 'standard', country = 'LK') {
+    const sub = this.subtotal();
+    if (sub >= NoraConfig.freeShippingThreshold) return 0;
+    const isLocal = (NoraConfig.supportedCountries.find(c => c.code === country) || {}).local;
+    if (method === 'express') return isLocal ? NoraConfig.shippingFees.express : NoraConfig.shippingFees.internationalExpress;
+    return isLocal ? NoraConfig.shippingFees.standard : NoraConfig.shippingFees.internationalStandard;
+  },
+  totals(shippingMethod = 'standard', country = 'LK') {
+    const sub = this.subtotal();
+    const shipping = this.calculateShipping(shippingMethod, country);
+    const discount = this.getDiscount();
+    let discountAmount = 0;
+    if (discount) {
+      discountAmount = discount.type === 'percent' ? sub * (discount.value / 100) : discount.value;
+    }
+    const afterDiscount = Math.max(0, sub - discountAmount);
+    const tax = afterDiscount * (NoraConfig.taxRate || 0);
+    const total = afterDiscount + shipping + tax;
+    return { subtotal: sub, shipping, discount: discountAmount, tax, total };
+  }
+};
+
+const NoraWishlist = {
+  items() {
+    try { return JSON.parse(localStorage.getItem(NoraCart.WISH_KEY)) || []; }
+    catch { return []; }
+  },
+  save(items) { localStorage.setItem(NoraCart.WISH_KEY, JSON.stringify(items)); },
+  add(id) {
+    const items = this.items();
+    if (!items.includes(+id)) { items.push(+id); this.save(items); }
+  },
+  remove(id) {
+    this.save(this.items().filter(i => i !== +id));
+  },
+  has(id) { return this.items().includes(+id); },
+  products() { return this.items().map(id => NoraProducts.find(p => p.id === id)).filter(Boolean); }
+};
+
+const NoraUI = {
+  toast(message, type = 'success') {
+    const t = document.getElementById('toast');
+    if (!t) return;
+    t.textContent = message;
+    t.className = `toast show ${type}`;
+    clearTimeout(this._toastTimer);
+    this._toastTimer = setTimeout(() => t.classList.remove('show'), 3000);
+  },
+  formatPrice(n) {
+    return NoraConfig.currencySymbol + Number(n).toFixed(2);
+  },
+  productCard(p) {
+    const badge = p.oldPrice ? '<span class="product-badge sale">Sale</span>'
+      : p.isNew ? '<span class="product-badge">New</span>' : '';
+    const priceHtml = p.oldPrice
+      ? `<span class="old">${NoraUI.formatPrice(p.oldPrice)}</span> <span class="sale">${NoraUI.formatPrice(p.price)}</span>`
+      : NoraUI.formatPrice(p.price);
+    return `
+      <a href="product.html?id=${p.id}" class="product-card">
+        <div class="product-card-image">
+          ${badge}
+          <img src="${p.image}" alt="${p.name}" loading="lazy" />
+          <button class="product-quick-add" data-quick-add="${p.id}">Quick Add</button>
+        </div>
+        <h3>${p.name}</h3>
+        <div class="product-price">${priceHtml}</div>
+      </a>`;
+  }
+};
+
+// Delegate quick-add clicks globally
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('[data-quick-add]');
+  if (!btn) return;
+  e.preventDefault();
+  e.stopPropagation();
+  const id = +btn.dataset.quickAdd;
+  const p = NoraProducts.find(x => x.id === id);
+  if (!p) return;
+  const size = (p.sizes && p.sizes.length) ? p.sizes[0] : null;
+  NoraCart.add(id, 1, size);
+  NoraUI.toast(`${p.name} added to cart`);
+});
+
+// Update cart count on load
+document.addEventListener('DOMContentLoaded', () => NoraCart.updateCount());
+
+/* =========================================================
+   Nora — Shared UI behavior
+   ========================================================= */
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Sticky header shadow
+  const header = document.getElementById('siteHeader');
+  if (header) {
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 20);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  // Mobile nav toggle
+  const toggle = document.getElementById('navToggle');
+  const nav = document.getElementById('mainNav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', nav.classList.contains('open'));
+    });
+    // Close on link click
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+  }
+
+  // Search bar toggle
+  const searchToggle = document.getElementById('searchToggle');
+  const searchBar = document.getElementById('searchBar');
+  if (searchToggle && searchBar) {
+    searchToggle.addEventListener('click', () => {
+      searchBar.classList.toggle('open');
+      if (searchBar.classList.contains('open')) {
+        setTimeout(() => searchBar.querySelector('input')?.focus(), 200);
+      }
+    });
+  }
+
+  // Newsletter form
+  const nlForm = document.getElementById('newsletterForm');
+  if (nlForm) {
+    nlForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = nlForm.querySelector('input[type="email"]').value;
+      if (!email) return;
+      // In production, POST to backend
+      try {
+        if (NoraConfig.apiBase) {
+          fetch(`${NoraConfig.apiBase}/newsletter`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email })
+          }).catch(() => {});
+        }
+      } catch (err) {}
+      NoraUI.toast('Welcome to the Nora circle ?');
+      nlForm.reset();
+    });
+  }
+
+  // Fade-in observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fade-in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.section-head, .collection-card, .product-card, .feature, .testimonial').forEach(el => observer.observe(el));
+});
+
+/* =========================================================
+   Nora — Shop / Catalog
+   ========================================================= */
+
+(function() {
+  const params = new URLSearchParams(location.search);
+
+  function applyFilters() {
+    const category = document.querySelector('input[name="category"]:checked')?.value || '';
+    const price = document.querySelector('input[name="price"]:checked')?.value || '';
+    const inStockOnly = document.getElementById('inStockOnly')?.checked;
+    const search = (document.getElementById('shopSearch')?.value || params.get('q') || '').toLowerCase().trim();
+    const sort = document.getElementById('shopSort')?.value || 'featured';
+
+    let items = [...NoraProducts];
+
+    if (category) items = items.filter(p => p.category === category);
+    if (price) {
+      const [min, max] = price.split('-').map(Number);
+      items = items.filter(p => p.price >= min && p.price <= max);
+    }
+    if (inStockOnly) items = items.filter(p => p.stock > 0);
+    if (search) items = items.filter(p =>
+      p.name.toLowerCase().includes(search) ||
+      (p.description || '').toLowerCase().includes(search) ||
+      (p.material || '').toLowerCase().includes(search)
+    );
+
+    switch (sort) {
+      case 'newest': items.sort((a, b) => (b.isNew ? 1 : 0) - (a.isNew ? 1 : 0)); break;
+      case 'price-asc': items.sort((a, b) => a.price - b.price); break;
+      case 'price-desc': items.sort((a, b) => b.price - a.price); break;
+      case 'popular': items.sort((a, b) => (b.reviews || 0) - (a.reviews || 0)); break;
+    }
+
+    return items;
+  }
+
+  function render() {
+    const items = applyFilters();
+    const grid = document.getElementById('shopGrid');
+    const empty = document.getElementById('emptyShop');
+    const count = document.getElementById('shopCount');
+    if (!grid) return;
+
+    if (items.length === 0) {
+      grid.innerHTML = '';
+      empty?.classList.remove('hidden');
+    } else {
+      empty?.classList.add('hidden');
+      grid.innerHTML = items.map(NoraUI.productCard).join('');
+    }
+    if (count) count.textContent = `${items.length} ${items.length === 1 ? 'product' : 'products'}`;
+  }
+
+  function updateTitle() {
+    const category = document.querySelector('input[name="category"]:checked')?.value;
+    const title = document.getElementById('shopTitle');
+    if (!title) return;
+    const names = {
+      rings: 'Rings', necklaces: 'Necklaces', earrings: 'Earrings',
+      bracelets: 'Bracelets', gold: 'Gold Jewelry', personalized: 'Personalized'
+    };
+    title.textContent = names[category] || 'All Jewelry';
+    document.title = `${title.textContent} — Nora`;
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Pre-select from URL
+    const cat = params.get('category');
+    if (cat) {
+      const radio = document.querySelector(`input[name="category"][value="${cat}"]`);
+      if (radio) radio.checked = true;
+    }
+    const q = params.get('q');
+    if (q) {
+      const inp = document.getElementById('shopSearch');
+      if (inp) inp.value = q;
+    }
+
+    document.querySelectorAll('input[name="category"], input[name="price"]').forEach(el => {
+      el.addEventListener('change', () => { updateTitle(); render(); });
+    });
+    document.getElementById('inStockOnly')?.addEventListener('change', render);
+    document.getElementById('shopSort')?.addEventListener('change', render);
+
+    let searchTimer;
+    document.getElementById('shopSearch')?.addEventListener('input', () => {
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(render, 200);
+    });
+
+    document.getElementById('clearFilters')?.addEventListener('click', () => {
+      document.querySelectorAll('input[name="category"][value=""], input[name="price"][value=""]').forEach(r => r.checked = true);
+      document.getElementById('inStockOnly').checked = false;
+      document.getElementById('shopSearch').value = '';
+      document.getElementById('shopSort').value = 'featured';
+      updateTitle();
+      render();
+    });
+
+    updateTitle();
+    render();
+  });
+})();
+
+/* =========================================================
+   Nora — Checkout
+   In production, POST to /api/payments/create-session on your backend.
+   Never handle raw card data on the frontend.
+   ========================================================= */
+
+(function() {
+  function render() {
+    const container = document.getElementById('checkoutContent');
+    if (!NoraCart.items().length) {
+      container.innerHTML = `
+        <div class="empty-state">
+          <h2>Your cart is empty</h2>
+          <p>Add some beautiful pieces before checking out.</p>
+          <a href="shop.html" class="btn btn-primary">Shop Now</a>
+        </div>`;
+      return;
+    }
+
+    const countries = NoraConfig.supportedCountries.map(c => `<option value="${c.code}">${c.name}</option>`).join('');
+
+    container.innerHTML = `
+      <form id="checkoutForm" class="checkout-layout" novalidate>
+        <div class="checkout-form-col">
+          <section class="checkout-section">
+            <h3>Contact</h3>
+            <div class="form-group">
+              <label><input type="checkbox" id="guestCheckout" checked /> Checkout as guest</label>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone *</label>
+                <input type="tel" id="phone" name="phone" required />
+              </div>
+            </div>
+          </section>
+
+          <section class="checkout-section">
+            <h3>Shipping Address</h3>
+            <div class="form-group">
+              <label for="address1">Address *</label>
+              <input type="text" id="address1" name="address1" required />
+            </div>
+            <div class="form-group">
+              <label for="address2">Apartment, suite, etc.</label>
+              <input type="text" id="address2" name="address2" />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="city">City *</label>
+                <input type="text" id="city" name="city" required />
+              </div>
+              <div class="form-group">
+                <label for="postalCode">Postal Code *</label>
+                <input type="text" id="postalCode" name="postalCode" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="country">Country *</label>
+                <select id="country" name="country" required>${countries}</select>
+              </div>
+              <div class="form-group">
+                <label for="deliveryNotes">Delivery Instructions</label>
+                <input type="text" id="deliveryNotes" name="deliveryNotes" />
+              </div>
+            </div>
+          </section>
+
+          <section class="checkout-section">
+            <h3>Shipping Method</h3>
+            <div class="payment-methods-list" id="shippingMethods">
+              <label class="payment-option selected">
+                <input type="radio" name="shippingMethod" value="standard" checked />
+                <div class="payment-option-info">
+                  <strong>Standard Shipping</strong>
+                  <span id="standardEta"></span>
+                </div>
+                <span id="standardFee"></span>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="shippingMethod" value="express" />
+                <div class="payment-option-info">
+                  <strong>Express Shipping</strong>
+                  <span id="expressEta"></span>
+                </div>
+                <span id="expressFee"></span>
+              </label>
+            </div>
+          </section>
+
+          <section class="checkout-section">
+            <h3>Payment Method</h3>
+            <div class="payment-methods-list" id="paymentMethods">
+              <label class="payment-option selected">
+                <input type="radio" name="paymentMethod" value="card" checked />
+                <div class="payment-option-info">
+                  <strong>Credit / Debit Card</strong>
+                  <span>Visa, Mastercard — secured by our payment provider</span>
+                </div>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="payhere" />
+                <div class="payment-option-info">
+                  <strong>PayHere</strong>
+                  <span>Sri Lankan payment gateway</span>
+                </div>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="cod" />
+                <div class="payment-option-info">
+                  <strong>Cash on Delivery</strong>
+                  <span>Pay when your order arrives (Sri Lanka only)</span>
+                </div>
+              </label>
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="bank" />
+                <div class="payment-option-info">
+                  <strong>Bank Transfer</strong>
+                  <span>Instructions will be sent by email</span>
+                </div>
+              </label>
+            </div>
+            <div id="cardDetails" class="form-group" style="margin-top:1rem;">
+              <p class="muted" style="font-size:0.85rem;">
+                In demo mode, card details are not collected. In production, you'll be redirected to our secure payment provider.
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <aside class="order-summary-checkout">
+          <h3>Order Summary</h3>
+          <div id="summaryItems"></div>
+          <div id="summaryTotals" style="margin-top:1rem;"></div>
+          <div class="discount-row" style="margin-top:1rem;">
+            <input type="text" id="checkoutDiscount" placeholder="Discount code" />
+            <button type="button" class="btn btn-outline" id="applyCheckoutDiscount">Apply</button>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-full" style="margin-top:1.5rem;">Place Order</button>
+          <p class="muted" style="font-size:0.75rem; margin-top:1rem; text-align:center;">
+            By placing your order, you agree to our Terms of Service and Privacy Policy.
+          </p>
+        </aside>
+      </form>
+    `;
+
+    updateSummary();
+    bindEvents();
+  }
+
+  function updateSummary() {
+    const items = NoraCart.items();
+    const method = document.querySelector('input[name="shippingMethod"]:checked')?.value || 'standard';
+    const country = document.getElementById('country')?.value || 'LK';
+    const totals = NoraCart.totals(method, country);
+
+    document.getElementById('summaryItems').innerHTML = items.map(i => `
+      <div class="summary-item">
+        <img src="${i.image}" alt="${i.name}" />
+        <div class="summary-item-info">
+          <strong>${i.name}</strong>
+          <span>Qty ${i.qty}${i.size ? ' · ' + i.size : ''}</span>
+        </div>
+        <div>${NoraUI.formatPrice(i.price * i.qty)}</div>
+      </div>
+    `).join('');
+
+    const est = NoraConfig.deliveryEstimates[method === 'express' ? 'express' : 'standard'];
+    const isLocal = (NoraConfig.supportedCountries.find(c => c.code === country) || {}).local;
+    const actualEst = isLocal ? est : NoraConfig.deliveryEstimates[method === 'express' ? 'internationalExpress' : 'internationalStandard'];
+
+    const stdFee = NoraCart.calculateShipping('standard', country);
+    const expFee = NoraCart.calculateShipping('express', country);
+    document.getElementById('standardFee').textContent = stdFee === 0 ? 'FREE' : NoraUI.formatPrice(stdFee);
+    document.getElementById('expressFee').textContent = expFee === 0 ? 'FREE' : NoraUI.formatPrice(expFee);
+    document.getElementById('standardEta').textContent = `${actualEst.min}–${actualEst.max} business days`;
+    document.getElementById('expressEta').textContent = method === 'express'
+      ? `${NoraConfig.deliveryEstimates.express.min}–${NoraConfig.deliveryEstimates.express.max} business days`
+      : `${NoraConfig.deliveryEstimates.internationalExpress.min}–${NoraConfig.deliveryEstimates.internationalExpress.max} business days`;
+
+    let totalsHtml = `
+      <div class="summary-row"><span>Subtotal</span><span>${NoraUI.formatPrice(totals.subtotal)}</span></div>
+      <div class="summary-row"><span>Shipping</span><span>${totals.shipping === 0 ? 'FREE' : NoraUI.formatPrice(totals.shipping)}</span></div>`;
+    if (totals.discount > 0) totalsHtml += `<div class="summary-row"><span>Discount</span><span>-${NoraUI.formatPrice(totals.discount)}</span></div>`;
+    if (totals.tax > 0) totalsHtml += `<div class="summary-row"><span>Tax</span><span>${NoraUI.formatPrice(totals.tax)}</span></div>`;
+    totalsHtml += `<div class="summary-row total"><span>Total</span><span>${NoraUI.formatPrice(totals.total)}</span></div>`;
+    document.getElementById('summaryTotals').innerHTML = totalsHtml;
+  }
+
+  function bindEvents() {
+    document.querySelectorAll('#paymentMethods .payment-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        document.querySelectorAll('#paymentMethods .payment-option').forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        opt.querySelector('input').checked = true;
+      });
+    });
+    document.querySelectorAll('#shippingMethods .payment-option').forEach(opt => {
+      opt.addEventListener('click', () => {
+        document.querySelectorAll('#shippingMethods .payment-option').forEach(o => o.classList.remove('selected'));
+        opt.classList.add('selected');
+        opt.querySelector('input').checked = true;
+        updateSummary();
+      });
+    });
+    document.getElementById('country')?.addEventListener('change', updateSummary);
+    document.getElementById('applyCheckoutDiscount').onclick = () => {
+      const code = document.getElementById('checkoutDiscount').value.trim();
+      const result = NoraCart.applyDiscount(code);
+      NoraUI.toast(result.message, result.success ? 'success' : 'error');
+      if (result.success) updateSummary();
+    };
+
+    document.getElementById('checkoutForm').onsubmit = async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      // Basic validation
+      const required = form.querySelectorAll('[required]');
+      let valid = true;
+      required.forEach(input => {
+        if (!input.value.trim()) {
+          input.classList.add('error');
+          valid = false;
+        } else input.classList.remove('error');
+      });
+      if (!valid) return NoraUI.toast('Please fill in all required fields', 'error');
+
+      const fd = new FormData(form);
+      const order = {
+        customer: {
+          firstName: fd.get('firstName'),
+          lastName: fd.get('lastName'),
+          email: fd.get('email'),
+          phone: fd.get('phone'),
+          isGuest: document.getElementById('guestCheckout').checked
+        },
+        shipping: {
+          address1: fd.get('address1'),
+          address2: fd.get('address2'),
+          city: fd.get('city'),
+          postalCode: fd.get('postalCode'),
+          country: fd.get('country'),
+          deliveryNotes: fd.get('deliveryNotes')
+        },
+        shippingMethod: fd.get('shippingMethod'),
+        paymentMethod: fd.get('paymentMethod'),
+        items: NoraCart.items(),
+        totals: NoraCart.totals(fd.get('shippingMethod'), fd.get('country'))
+      };
+
+      // Demo mode: simulate order creation
+      try {
+        if (NoraConfig.apiBase) {
+          const res = await fetch(`${NoraConfig.apiBase}/orders`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(order)
+          });
+          if (res.ok) {
+            const data = await res.json();
+            // For card / PayHere, redirect to hosted checkout if provider returned a URL
+            if (data.paymentUrl) {
+              window.location.href = data.paymentUrl;
+              return;
+            }
+            showConfirmation(data);
+            return;
+          }
+        }
+      } catch (err) { /* fall through to demo */ }
+
+      // Demo confirmation
+      const orderNumber = 'NORA-' + new Date().getFullYear() + '-' + String(Math.floor(Math.random() * 9999)).padStart(4, '0');
+      showConfirmation({
+        orderNumber,
+        ...order,
+        status: order.paymentMethod === 'cod' || order.paymentMethod === 'bank' ? 'Pending' : 'Confirmed',
+        paymentStatus: order.paymentMethod === 'card' || order.paymentMethod === 'payhere' ? 'Authorized (demo)' : 'Pending'
+      });
+    };
+  }
+
+  function showConfirmation(order) {
+    NoraCart.clear();
+    const container = document.getElementById('checkoutContent');
+    container.innerHTML = `
+      <div class="order-track-card" style="max-width:700px;">
+        <div class="eyebrow">Order Confirmed</div>
+        <h2>Thank you, ${order.customer.firstName}!</h2>
+        <p class="muted">Your order has been received.</p>
+        <p style="margin:1.5rem 0;"><strong>Order Number:</strong> <span class="status-badge">${order.orderNumber}</span></p>
+        <p><strong>Status:</strong> ${order.status}</p>
+        <p><strong>Payment:</strong> ${order.paymentStatus || 'Pending'}</p>
+        <p><strong>Total:</strong> ${NoraUI.formatPrice(order.totals.total)}</p>
+        <p class="muted" style="margin-top:1.5rem; font-size:0.85rem;">
+          A confirmation email has been sent to ${order.customer.email}.
+          ${order.paymentMethod === 'bank' ? '<br/>Bank transfer instructions will follow separately.' : ''}
+          ${order.paymentMethod === 'cod' ? '<br/>Please have the exact amount ready upon delivery.' : ''}
+        </p>
+        <div style="margin-top:2rem; display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+          <a href="orders.html" class="btn btn-outline">Track Order</a>
+          <a href="shop.html" class="btn btn-primary">Continue Shopping</a>
+        </div>
+      </div>
+    `;
+  }
+
+  document.addEventListener('DOMContentLoaded', render);
+})();
+
+/* =========================================================
+   Nora — Account
+   Demo mode uses localStorage. In production, use backend auth.
+   ========================================================= */
+
+(function() {
+  const USER_KEY = 'nora_current_user';
+  const USERS_KEY = 'nora_users';
+
+  function currentUser() {
+    try { return JSON.parse(localStorage.getItem(USER_KEY)); } catch { return null; }
+  }
+  function setCurrentUser(u) {
+    if (u) localStorage.setItem(USER_KEY, JSON.stringify(u));
+    else localStorage.removeItem(USER_KEY);
+  }
+  function allUsers() {
+    try { return JSON.parse(localStorage.getItem(USERS_KEY)) || []; } catch { return []; }
+  }
+  function saveUsers(list) { localStorage.setItem(USERS_KEY, JSON.stringify(list)); }
+
+  function render() {
+    const container = document.getElementById('accountContent');
+    const user = currentUser();
+    if (!user) return renderAuth(container);
+    renderDashboard(container, user);
+  }
+
+  function renderAuth(container) {
+    const mode = new URLSearchParams(location.search).get('mode') || 'login';
+    container.innerHTML = `
+      <div class="auth-layout">
+        <h1>${mode === 'register' ? 'Create Account' : 'Welcome Back'}</h1>
+        <p>${mode === 'register' ? 'Join the Nora circle.' : 'Sign in to your account.'}</p>
+        <form class="auth-form" id="authForm">
+          ${mode === 'register' ? `
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" name="name" required />
+            </div>` : ''}
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" name="password" required minlength="6" />
+          </div>
+          <button type="submit" class="btn btn-primary">${mode === 'register' ? 'Create Account' : 'Sign In'}</button>
+        </form>
+        <div class="auth-switch">
+          ${mode === 'register'
+            ? `Already have an account? <a href="account.html?mode=login">Sign in</a>`
+            : `New to Nora? <a href="account.html?mode=register">Create an account</a>`}
+        </div>
+        ${mode === 'login' ? `<div class="auth-switch"><a href="#" id="forgotLink">Forgot password?</a></div>` : ''}
+      </div>
+    `;
+
+    document.getElementById('authForm').onsubmit = (e) => {
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      const email = fd.get('email').toLowerCase();
+      const password = fd.get('password');
+      const users = allUsers();
+
+      if (mode === 'register') {
+        if (users.find(u => u.email === email)) return NoraUI.toast('An account with this email already exists', 'error');
+        const newUser = {
+          id: Date.now(),
+          name: fd.get('name'),
+          email,
+          // NOTE: demo only — real apps MUST hash passwords on the server
+          password,
+          addresses: [],
+          orders: [],
+          createdAt: new Date().toISOString()
+        };
+        users.push(newUser);
+        saveUsers(users);
+        setCurrentUser(newUser);
+        NoraUI.toast('Account created ?');
+        render();
+      } else {
+        const user = users.find(u => u.email === email && u.password === password);
+        if (!user) return NoraUI.toast('Invalid email or password', 'error');
+        setCurrentUser(user);
+        NoraUI.toast(`Welcome back, ${user.name.split(' ')[0]} ?`);
+        render();
+      }
+    };
+
+    const forgot = document.getElementById('forgotLink');
+    if (forgot) forgot.onclick = (e) => {
+      e.preventDefault();
+      const email = prompt('Enter your email for a password reset link:');
+      if (email) NoraUI.toast('If an account exists, a reset link has been sent.');
+    };
+  }
+
+  function renderDashboard(container, user) {
+    container.innerHTML = `
+      <div class="account-dashboard">
+        <nav class="account-nav">
+          <button data-view="profile" class="active">Profile</button>
+          <button data-view="orders">Orders</button>
+          <button data-view="addresses">Addresses</button>
+          <button data-view="wishlist">Wishlist</button>
+          <button data-view="security">Security</button>
+          <button id="logoutBtn">Sign Out</button>
+        </nav>
+        <div class="account-content" id="accountView"></div>
+      </div>
+    `;
+
+    const view = document.getElementById('accountView');
+    const buttons = container.querySelectorAll('.account-nav button[data-view]');
+    buttons.forEach(b => b.onclick = () => {
+      buttons.forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      showView(b.dataset.view);
+    });
+    document.getElementById('logoutBtn').onclick = () => {
+      setCurrentUser(null);
+      NoraUI.toast('Signed out');
+      render();
+    };
+
+    function showView(v) {
+      if (v === 'profile') {
+        view.innerHTML = `
+          <h2>Profile</h2>
+          <form id="profileForm">
+            <div class="form-row">
+              <div class="form-group"><label>Name</label><input type="text" name="name" value="${user.name || ''}" /></div>
+              <div class="form-group"><label>Email</label><input type="email" name="email" value="${user.email}" disabled /></div>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </form>`;
+        document.getElementById('profileForm').onsubmit = (e) => {
+          e.preventDefault();
+          const name = new FormData(e.target).get('name');
+          const users = allUsers();
+          const idx = users.findIndex(u => u.id === user.id);
+          if (idx >= 0) { users[idx].name = name; saveUsers(users); user.name = name; setCurrentUser(user); }
+          NoraUI.toast('Profile updated');
+        };
+      } else if (v === 'orders') {
+        const orders = user.orders || [];
+        view.innerHTML = `<h2>Order History</h2>` + (orders.length
+          ? `<table class="admin-table"><thead><tr><th>Order</th><th>Date</th><th>Status</th><th>Total</th></tr></thead><tbody>
+              ${orders.map(o => `<tr><td>${o.orderNumber}</td><td>${new Date(o.createdAt).toLocaleDateString()}</td><td>${o.status}</td><td>${NoraUI.formatPrice(o.totals.total)}</td></tr>`).join('')}
+            </tbody></table>`
+          : `<p class="muted">You haven't placed any orders yet. <a href="shop.html">Start shopping</a>.</p>`);
+      } else if (v === 'addresses') {
+        const addrs = user.addresses || [];
+        view.innerHTML = `<h2>Saved Addresses</h2>` + (addrs.length
+          ? addrs.map((a, i) => `<div style="padding:1rem; border:1px solid var(--line); margin-bottom:0.75rem;">${a.address1}, ${a.city}, ${a.country}</div>`).join('')
+          : `<p class="muted">No saved addresses.</p>`);
+      } else if (v === 'wishlist') {
+        const items = NoraWishlist.products();
+        view.innerHTML = `<h2>Wishlist</h2>` + (items.length
+          ? `<div class="product-grid">${items.map(NoraUI.productCard).join('')}</div>`
+          : `<p class="muted">Your wishlist is empty. <a href="shop.html">Browse products</a>.</p>`);
+      } else if (v === 'security') {
+        view.innerHTML = `
+          <h2>Security</h2>
+          <form id="passwordForm">
+            <div class="form-group"><label>Current Password</label><input type="password" name="current" required /></div>
+            <div class="form-group"><label>New Password</label><input type="password" name="newPass" minlength="6" required /></div>
+            <button type="submit" class="btn btn-primary">Update Password</button>
+          </form>`;
+        document.getElementById('passwordForm').onsubmit = (e) => {
+          e.preventDefault();
+          const fd = new FormData(e.target);
+          if (fd.get('current') !== user.password) return NoraUI.toast('Current password is incorrect', 'error');
+          const users = allUsers();
+          const idx = users.findIndex(u => u.id === user.id);
+          if (idx >= 0) { users[idx].password = fd.get('newPass'); saveUsers(users); user.password = fd.get('newPass'); setCurrentUser(user); }
+          NoraUI.toast('Password updated');
+          e.target.reset();
+        };
+      }
+    }
+    showView('profile');
+  }
+
+  document.addEventListener('DOMContentLoaded', render);
+})();
+
+/* =========================================================
+   Nora — Admin Dashboard
+   Demo mode uses localStorage + NoraProducts.
+   In production, protect all routes with server-side auth.
+   ========================================================= */
+
+(function() {
+  const ADMIN_KEY = 'nora_admin_auth';
+  // Demo credentials — change in production and enforce server-side
+  const DEMO_ADMIN = { email: 'admin@nora.com', password: 'nora2026' };
+
+  function isAdmin() { try { return JSON.parse(localStorage.getItem(ADMIN_KEY))?.authenticated; } catch { return false; } }
+  function setAdmin(v) { localStorage.setItem(ADMIN_KEY, JSON.stringify({ authenticated: v })); }
+
+  function renderLogin() {
+    document.body.innerHTML = `
+      <div class="admin-login">
+        <div class="admin-login-card">
+          <h2>Admin Access</h2>
+          <p>Sign in to manage your store.</p>
+          <form id="adminLoginForm">
+            <div class="form-group"><label>Email</label><input type="email" name="email" required /></div>
+            <div class="form-group"><label>Password</label><input type="password" name="password" required /></div>
+            <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+          </form>
+          <p class="muted" style="margin-top:1.5rem; font-size:0.75rem;">Demo: admin@nora.com / nora2026</p>
+        </div>
+      </div>`;
+    document.getElementById('adminLoginForm').onsubmit = (e) => {
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      // In production, POST to /api/admin/login
+      if (fd.get('email') === DEMO_ADMIN.email && fd.get('password') === DEMO_ADMIN.password) {
+        setAdmin(true);
+        renderApp();
+      } else {
+        NoraUI.toast('Invalid credentials', 'error');
+      }
+    };
+  }
+
+  function renderApp() {
+    document.body.innerHTML = `
+      <div class="admin-layout">
+        <aside class="admin-sidebar">
+          <h2 class="admin-logo">NORA<br><span>Admin</span></h2>
+          <nav>
+            <button data-view="dashboard" class="active">Dashboard</button>
+            <button data-view="products">Products</button>
+            <button data-view="orders">Orders</button>
+            <button data-view="customers">Customers</button>
+            <button data-view="discounts">Discounts</button>
+            <button data-view="settings">Settings</button>
+            <button id="adminLogout" class="logout-btn">Log Out</button>
+          </nav>
+        </aside>
+        <main class="admin-main">
+          <header class="admin-header">
+            <h1 id="adminTitle">Dashboard</h1>
+            <div class="admin-user">Admin · <a href="index.html">View Store</a></div>
+          </header>
+          <div id="adminContent"></div>
+        </main>
+      </div>
+      <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    `;
+
+    const content = document.getElementById('adminContent');
+    const title = document.getElementById('adminTitle');
+    const buttons = document.querySelectorAll('.admin-sidebar button[data-view]');
+    buttons.forEach(b => b.onclick = () => {
+      buttons.forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      title.textContent = b.textContent;
+      showView(b.dataset.view);
+    });
+    document.getElementById('adminLogout').onclick = () => {
+      setAdmin(false);
+      location.reload();
+    };
+
+    function showView(v) {
+      if (v === 'dashboard') {
+        const totalSales = NoraProducts.length * 420;
+        content.innerHTML = `
+          <div class="stats-grid">
+            <div class="stat-card"><div class="label">Total Sales</div><div class="value">$${totalSales.toLocaleString()}</div><div class="change">+12.4% vs last month</div></div>
+            <div class="stat-card"><div class="label">Orders</div><div class="value">128</div><div class="change">+8 this week</div></div>
+            <div class="stat-card"><div class="label">Products</div><div class="value">${NoraProducts.length}</div><div class="change">${NoraProducts.filter(p => p.stock < 5).length} low stock</div></div>
+            <div class="stat-card"><div class="label">Customers</div><div class="value">342</div><div class="change">+14 this month</div></div>
+          </div>
+          <h3 style="margin-bottom:1rem;">Recent Orders</h3>
+          <table class="admin-table">
+            <thead><tr><th>Order</th><th>Customer</th><th>Date</th><th>Status</th><th>Total</th></tr></thead>
+            <tbody>
+              <tr><td>NORA-2026-0142</td><td>Sophia M.</td><td>Oct 15, 2026</td><td>Shipped</td><td>$620.00</td></tr>
+              <tr><td>NORA-2026-0141</td><td>Isabella R.</td><td>Oct 14, 2026</td><td>Processing</td><td>$1,250.00</td></tr>
+              <tr><td>NORA-2026-0140</td><td>Amelia K.</td><td>Oct 14, 2026</td><td>Confirmed</td><td>$485.00</td></tr>
+              <tr><td>NORA-2026-0139</td><td>Charlotte P.</td><td>Oct 13, 2026</td><td>Delivered</td><td>$395.00</td></tr>
+            </tbody>
+          </table>`;
+      } else if (v === 'products') {
+        content.innerHTML = `
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+            <p class="muted">${NoraProducts.length} products</p>
+            <button class="btn btn-primary" id="addProductBtn">+ Add Product</button>
+          </div>
+          <table class="admin-table">
+            <thead><tr><th></th><th>Name</th><th>Category</th><th>Price</th><th>Stock</th><th>Actions</th></tr></thead>
+            <tbody>
+              ${NoraProducts.map(p => `
+                <tr>
+                  <td><img src="${p.image}" alt="" /></td>
+                  <td>${p.name}</td>
+                  <td>${p.category}</td>
+                  <td>${NoraUI.formatPrice(p.price)}</td>
+                  <td>${p.stock}</td>
+                  <td class="actions">
+                    <button data-edit="${p.id}">Edit</button>
+                    <button data-delete="${p.id}">Delete</button>
+                  </td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>`;
+        content.querySelectorAll('[data-edit]').forEach(b => b.onclick = () => editProduct(+b.dataset.edit));
+        content.querySelectorAll('[data-delete]').forEach(b => b.onclick = () => {
+          if (confirm('Delete this product?')) {
+            const idx = NoraProducts.findIndex(p => p.id === +b.dataset.delete);
+            if (idx >= 0) { NoraProducts.splice(idx, 1); NoraUI.toast('Product deleted'); showView('products'); }
+          }
+        });
+        document.getElementById('addProductBtn').onclick = () => editProduct(null);
+      } else if (v === 'orders') {
+        content.innerHTML = `
+          <table class="admin-table">
+            <thead><tr><th>Order</th><th>Customer</th><th>Date</th><th>Payment</th><th>Status</th><th>Total</th><th>Actions</th></tr></thead>
+            <tbody>
+              <tr><td>NORA-2026-0142</td><td>sophia@example.com</td><td>Oct 15</td><td>Paid</td><td>Shipped</td><td>$620</td><td class="actions"><button>Update</button></td></tr>
+              <tr><td>NORA-2026-0141</td><td>isabella@example.com</td><td>Oct 14</td><td>Paid</td><td>Processing</td><td>$1,250</td><td class="actions"><button>Update</button></td></tr>
+              <tr><td>NORA-2026-0140</td><td>amelia@example.com</td><td>Oct 14</td><td>Pending</td><td>Confirmed</td><td>$485</td><td class="actions"><button>Update</button></td></tr>
+            </tbody>
+          </table>`;
+      } else if (v === 'customers') {
+        content.innerHTML = `
+          <table class="admin-table">
+            <thead><tr><th>Name</th><th>Email</th><th>Orders</th><th>Joined</th></tr></thead>
+            <tbody>
+              <tr><td>Sophia M.</td><td>sophia@example.com</td><td>4</td><td>Aug 2026</td></tr>
+              <tr><td>Isabella R.</td><td>isabella@example.com</td><td>2</td><td>Sep 2026</td></tr>
+              <tr><td>Amelia K.</td><td>amelia@example.com</td><td>7</td><td>Jun 2026</td></tr>
+            </tbody>
+          </table>`;
+      } else if (v === 'discounts') {
+        const discounts = Object.entries(NoraConfig.discounts);
+        content.innerHTML = `
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+            <p class="muted">${discounts.length} discount codes</p>
+            <button class="btn btn-primary" onclick="alert('In production, open a form to create a new discount code.')">+ New Code</button>
+          </div>
+          <table class="admin-table">
+            <thead><tr><th>Code</th><th>Type</th><th>Value</th><th>Description</th></tr></thead>
+            <tbody>
+              ${discounts.map(([code, d]) => `<tr><td><strong>${code}</strong></td><td>${d.type}</td><td>${d.type === 'percent' ? d.value + '%' : '$' + d.value}</td><td>${d.description}</td></tr>`).join('')}
+            </tbody>
+          </table>`;
+      } else if (v === 'settings') {
+        content.innerHTML = `
+          <form id="settingsForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Free Shipping Threshold ($)</label>
+                <input type="number" name="freeShipping" value="${NoraConfig.freeShippingThreshold}" />
+              </div>
+              <div class="form-group">
+                <label>Tax Rate (e.g. 0.12 for 12%)</label>
+                <input type="number" step="0.01" name="taxRate" value="${NoraConfig.taxRate}" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Standard Shipping Fee</label>
+                <input type="number" name="stdFee" value="${NoraConfig.shippingFees.standard}" />
+              </div>
+              <div class="form-group">
+                <label>Express Shipping Fee</label>
+                <input type="number" name="expFee" value="${NoraConfig.shippingFees.express}" />
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Settings</button>
+          </form>`;
+        document.getElementById('settingsForm').onsubmit = (e) => {
+          e.preventDefault();
+          const fd = new FormData(e.target);
+          NoraConfig.freeShippingThreshold = +fd.get('freeShipping');
+          NoraConfig.taxRate = +fd.get('taxRate');
+          NoraConfig.shippingFees.standard = +fd.get('stdFee');
+          NoraConfig.shippingFees.express = +fd.get('expFee');
+          NoraUI.toast('Settings saved');
+        };
+      }
+    }
+
+    function editProduct(id) {
+      const p = id ? NoraProducts.find(x => x.id === id) : { name: '', category: 'rings', price: 0, stock: 0, image: '', description: '', material: '', sizes: [] };
+      const html = `
+        <div style="background:var(--ivory); padding:2rem; border:1px solid var(--line);">
+          <h3 style="margin-bottom:1.5rem;">${id ? 'Edit' : 'Add'} Product</h3>
+          <form id="productForm">
+            <div class="form-row">
+              <div class="form-group"><label>Name</label><input name="name" value="${p.name}" required /></div>
+              <div class="form-group"><label>Category</label>
+                <select name="category">
+                  ${['rings','necklaces','earrings','bracelets','gold','personalized'].map(c => `<option value="${c}" ${p.category===c?'selected':''}>${c}</option>`).join('')}
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group"><label>Price</label><input type="number" step="0.01" name="price" value="${p.price}" required /></div>
+              <div class="form-group"><label>Stock</label><input type="number" name="stock" value="${p.stock}" required /></div>
+            </div>
+            <div class="form-group"><label>Image URL</label><input name="image" value="${p.image}" /></div>
+            <div class="form-group"><label>Description</label><textarea name="description" rows="3">${p.description || ''}</textarea></div>
+            <div class="form-group"><label>Material</label><input name="material" value="${p.material || ''}" /></div>
+            <div class="form-group"><label>Sizes (comma-separated)</label><input name="sizes" value="${(p.sizes || []).join(', ')}" /></div>
+            <div style="display:flex; gap:0.5rem;">
+              <button type="submit" class="btn btn-primary">Save</button>
+              <button type="button" class="btn btn-outline" id="cancelEdit">Cancel</button>
+            </div>
+          </form>
+        </div>`;
+      content.innerHTML = html;
+      document.getElementById('cancelEdit').onclick = () => showView('products');
+      document.getElementById('productForm').onsubmit = (e) => {
+        e.preventDefault();
+        const fd = new FormData(e.target);
+        const data = {
+          name: fd.get('name'),
+          category: fd.get('category'),
+          price: +fd.get('price'),
+          stock: +fd.get('stock'),
+          image: fd.get('image'),
+          description: fd.get('description'),
+          material: fd.get('material'),
+          sizes: fd.get('sizes').split(',').map(s => s.trim()).filter(Boolean)
+        };
+        if (id) Object.assign(p, data);
+        else NoraProducts.push({ id: Date.now(), ...data, sku: 'NOR-NEW-' + Date.now(), rating: 0, reviews: 0, bestseller: false, isNew: true, featured: false });
+        NoraUI.toast('Product saved');
+        showView('products');
+      };
+    }
+
+    showView('dashboard');
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    if (isAdmin()) renderApp();
+    else renderLogin();
+  });
+})();
+
+/* =========================================================
+   Nora — Express server entry point
+   ========================================================= */
+
+require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
+const helmet = require('helmet');
+const rateLimit = require('express-rate-limit');
+const path = require('path');
+const connectDB = require('./config/db');
+
+const apiRoutes = require('./routes/api');
+const authRoutes = require('./routes/auth');
+const adminRoutes = require('./routes/admin');
+const orderRoutes = require('./routes/orders');
+const paymentRoutes = require('./routes/payments');
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Security
+app.use(helmet({ contentSecurityPolicy: false }));
+app.use(cors({
+  origin: process.env.CORS_ORIGIN || '*',
+  credentials: true
+}));
+app.use(express.json({ limit: '2mb' }));
+app.use(express.urlencoded({ extended: true }));
+
+// Rate limiting on auth/payment endpoints
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 20,
+  message: { error: 'Too many requests, please try again later.' }
+});
+app.use('/api/auth', authLimiter);
+app.use('/api/payments', authLimiter);
+
+// Static uploads
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+// API routes
+app.use('/api', apiRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/admin', adminRoutes);
+app.use('/api/orders', orderRoutes);
+app.use('/api/payments', paymentRoutes);
+
+// Health check
+app.get('/health', (req, res) => res.json({ status: 'ok', time: new Date().toISOString() }));
+
+// Global error handler
+app.use((err, req, res, next) => {
+  console.error(err);
+  res.status(err.status || 500).json({
+    error: process.env.NODE_ENV === 'production' ? 'Internal server error' : err.message
+  });
+});
+
+async function start() {
+  try {
+    if (process.env.MONGODB_URI) {
+      await connectDB();
+    } else {
+      console.warn('??  MONGODB_URI not set — running without database. Configure .env to enable persistence.');
+    }
+    app.listen(PORT, () => {
+      console.log(`? Nora server running on http://localhost:${PORT}`);
+      console.log(`   Admin demo: admin@nora.com / nora2026`);
+    });
+  } catch (err) {
+    console.error('Failed to start server:', err);
+    process.exit(1);
+  }
+}
+
+start();
+
+const mongoose = require('mongoose');
+
+module.exports = async function connectDB() {
+  const uri = process.env.MONGODB_URI;
+  if (!uri) throw new Error('MONGODB_URI not set');
+  await mongoose.connect(uri, {
+    serverSelectionTimeoutMS: 5000,
+  });
+  console.log('? MongoDB connected');
+};
+
+const mongoose = require('mongoose');
+
+const productSchema = new mongoose.Schema({
+  name: { type: String, required: true, trim: true },
+  slug: { type: String, unique: true, sparse: true },
+  category: { type: String, required: true, enum: ['rings','necklaces','earrings','bracelets','gold','personalized'] },
+  collection: String,
+  price: { type: Number, required: true, min: 0 },
+  oldPrice: { type: Number, min: 0 },
+  description: String,
+  material: String,
+  sizes: [String],
+  stock: { type: Number, default: 0, min: 0 },
+  sku: { type: String, unique: true },
+  image: String,
+  images: [String],
+  rating: { type: Number, default: 0 },
+  reviews: { type: Number, default: 0 },
+  bestseller: { type: Boolean, default: false },
+  isNew: { type: Boolean, default: false },
+  featured: { type: Boolean, default: false }
+}, { timestamps: true });
+
+productSchema.index({ category: 1, price: 1 });
+productSchema.index({ name: 'text', description: 'text' });
+
+module.exports = mongoose.model('Product', productSchema);
+
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+
+const userSchema = new mongoose.Schema({
+  name: { type: String, required: true, trim: true },
+  email: { type: String, required: true, unique: true, lowercase: true },
+  passwordHash: { type: String, required: true },
+  role: { type: String, enum: ['customer', 'admin'], default: 'customer' },
+  addresses: [{
+    label: String,
+    address1: String,
+    address2: String,
+    city: String,
+    postalCode: String,
+    country: String,
+    phone: String
+  }],
+  resetToken: String,
+  resetTokenExpiry: Date
+}, { timestamps: true });
+
+userSchema.pre('save', async function(next) {
+  if (!this.isModified('passwordHash')) return next();
+  this.passwordHash = await bcrypt.hash(this.passwordHash, 12);
+  next();
+});
+
+userSchema.methods.comparePassword = function(plain) {
+  return bcrypt.compare(plain, this.passwordHash);
+};
+
+userSchema.methods.toSafe = function() {
+  return {
+    id: this._id,
+    name: this.name,
+    email: this.email,
+    role: this.role,
+    addresses: this.addresses
+  };
+};
+
+module.exports = mongoose.model('User', userSchema);
+
+const mongoose = require('mongoose');
+
+const orderSchema = new mongoose.Schema({
+  orderNumber: { type: String, required: true, unique: true },
+  user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  customer: {
+    firstName: String,
+    lastName: String,
+    email: { type: String, required: true },
+    phone: String,
+    isGuest: { type: Boolean, default: true }
+  },
+  shipping: {
+    address1: String,
+    address2: String,
+    city: String,
+    postalCode: String,
+    country: String,
+    deliveryNotes: String
+  },
+  shippingMethod: { type: String, enum: ['standard','express','internationalStandard','internationalExpress'], default: 'standard' },
+  paymentMethod: { type: String, enum: ['card','payhere','cod','bank'], required: true },
+  items: [{
+    productId: { type: mongoose.Schema.Types.ObjectId, ref: 'Product' },
+    name: String,
+    price: Number,
+    size: String,
+    qty: Number,
+    image: String
+  }],
+  totals: {
+    subtotal: Number,
+    shipping: Number,
+    discount: Number,
+    tax: Number,
+    total: Number
+  },
+  discountCode: String,
+  status: {
+    type: String,
+    enum: ['Pending','Confirmed','Processing','Shipped','Delivered','Cancelled'],
+    default: 'Pending'
+  },
+  paymentStatus: {
+    type: String,
+    enum: ['Pending','Authorized','Paid','Failed','Refunded'],
+    default: 'Pending'
+  },
+  paymentReference: String,
+  trackingNumber: String,
+  notes: String
+}, { timestamps: true });
+
+module.exports = mongoose.model('Order', orderSchema);
+
+const mongoose = require('mongoose');
+
+const discountSchema = new mongoose.Schema({
+  code: { type: String, required: true, unique: true, uppercase: true },
+  type: { type: String, enum: ['percent','fixed'], required: true },
+  value: { type: Number, required: true },
+  description: String,
+  minOrder: { type: Number, default: 0 },
+  maxUses: Number,
+  usedCount: { type: Number, default: 0 },
+  expiresAt: Date,
+  active: { type: Boolean, default: true }
+}, { timestamps: true });
+
+module.exports = mongoose.model('Discount', discountSchema);
+
+const jwt = require('jsonwebtoken');
+const User = require('../models/User');
+
+async function authOptional(req, res, next) {
+  const header = req.headers.authorization;
+  if (header && header.startsWith('Bearer ')) {
+    try {
+      const payload = jwt.verify(header.slice(7), process.env.JWT_SECRET);
+      req.user = await User.findById(payload.sub);
+    } catch (err) { /* ignore invalid tokens */ }
+  }
+  next();
+}
+
+async function authRequired(req, res, next) {
+  const header = req.headers.authorization;
+  if (!header || !header.startsWith('Bearer ')) {
+    return res.status(401).json({ error: 'Authentication required' });
+  }
+  try {
+    const payload = jwt.verify(header.slice(7), process.env.JWT_SECRET);
+    req.user = await User.findById(payload.sub);
+    if (!req.user) return res.status(401).json({ error: 'User not found' });
+    next();
+  } catch (err) {
+    return res.status(401).json({ error: 'Invalid or expired token' });
+  }
+}
+
+function adminOnly(req, res, next) {
+  if (!req.user || req.user.role !== 'admin') {
+    return res.status(403).json({ error: 'Admin access required' });
+  }
+  next();
+}
+
+module.exports = { authOptional, authRequired, adminOnly };
+
+const express = require('express');
+const jwt = require('jsonwebtoken');
+const { body, validationResult } = require('express-validator');
+const User = require('../models/User');
+const { authRequired } = require('../middleware/auth');
+
+const router = express.Router();
+
+function signToken(user) {
+  return jwt.sign({ sub: user._id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '7d' });
+}
+
+router.post('/register',
+  body('name').trim().notEmpty(),
+  body('email').isEmail().normalizeEmail(),
+  body('password').isLength({ min: 6 }),
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) return res.status(400).json({ errors: errors.array() });
+
+    const { name, email, password } = req.body;
+    const existing = await User.findOne({ email });
+    if (existing) return res.status(409).json({ error: 'Email already registered' });
+
+    const user = new User({ name, email, passwordHash: password });
+    await user.save();
+    res.status(201).json({ token: signToken(user), user: user.toSafe() });
+  }
+);
+
+router.post('/login',
+  body('email').isEmail().normalizeEmail(),
+  body('password').notEmpty(),
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) return res.status(400).json({ errors: errors.array() });
+
+    const { email, password } = req.body;
+    const user = await User.findOne({ email });
+    if (!user) return res.status(401).json({ error: 'Invalid credentials' });
+    const ok = await user.comparePassword(password);
+    if (!ok) return res.status(401).json({ error: 'Invalid credentials' });
+
+    res.json({ token: signToken(user), user: user.toSafe() });
+  }
+);
+
+router.post('/admin/login',
+  body('email').isEmail().normalizeEmail(),
+  body('password').notEmpty(),
+  async (req, res) => {
+    const { email, password } = req.body;
+    const user = await User.findOne({ email, role: 'admin' });
+    if (!user) return res.status(401).json({ error: 'Invalid admin credentials' });
+    const ok = await user.comparePassword(password);
+    if (!ok) return res.status(401).json({ error: 'Invalid admin credentials' });
+    res.json({ token: signToken(user), user: user.toSafe() });
+  }
+);
+
+router.get('/me', authRequired, (req, res) => {
+  res.json({ user: req.user.toSafe() });
+});
+
+router.post('/forgot-password',
+  body('email').isEmail().normalizeEmail(),
+  async (req, res) => {
+    const { email } = req.body;
+    const user = await User.findOne({ email });
+    // Always return success to avoid email enumeration
+    if (!user) return res.json({ ok: true });
+    const crypto = require('crypto');
+    user.resetToken = crypto.randomBytes(32).toString('hex');
+    user.resetTokenExpiry = new Date(Date.now() + 3600 * 1000);
+    await user.save();
+    // TODO: send email with reset link containing the token
+    res.json({ ok: true });
+  }
+);
+
+router.post('/reset-password',
+  body('token').notEmpty(),
+  body('password').isLength({ min: 6 }),
+  async (req, res) => {
+    const { token, password } = req.body;
+    const user = await User.findOne({
+      resetToken: token,
+      resetTokenExpiry: { $gt: new Date() }
+    });
+    if (!user) return res.status(400).json({ error: 'Invalid or expired token' });
+    user.passwordHash = password;
+    user.resetToken = undefined;
+    user.resetTokenExpiry = undefined;
+    await user.save();
+    res.json({ ok: true });
+  }
+);
+
+module.exports = router;
+
+const express = require('express');
+const Product = require('../models/Product');
+const Discount = require('../models/Discount');
+const { authOptional } = require('../middleware/auth');
+
+const router = express.Router();
+
+// Public product listing with filters
+router.get('/products', async (req, res) => {
+  const { category, minPrice, maxPrice, search, sort, inStock } = req.query;
+  const filter = {};
+  if (category) filter.category = category;
+  if (minPrice || maxPrice) {
+    filter.price = {};
+    if (minPrice) filter.price.$gte = +minPrice;
+    if (maxPrice) filter.price.$lte = +maxPrice;
+  }
+  if (inStock === 'true') filter.stock = { $gt: 0 };
+  if (search) filter.$text = { $search: search };
+
+  let sortObj = { featured: -1, createdAt: -1 };
+  if (sort === 'price-asc') sortObj = { price: 1 };
+  else if (sort === 'price-desc') sortObj = { price: -1 };
+  else if (sort === 'newest') sortObj = { createdAt: -1 };
+  else if (sort === 'popular') sortObj = { reviews: -1 };
+
+  const products = await Product.find(filter).sort(sortObj).limit(100);
+  res.json({ products });
+});
+
+router.get('/products/:id', async (req, res) => {
+  const product = await Product.findById(req.params.id);
+  if (!product) return res.status(404).json({ error: 'Not found' });
+  const related = await Product.find({ category: product.category, _id: { $ne: product._id } }).limit(4);
+  res.json({ product, related });
+});
+
+// Validate discount code
+router.post('/discounts/validate', async (req, res) => {
+  const { code } = req.body;
+  const discount = await Discount.findOne({ code: (code || '').toUpperCase(), active: true });
+  if (!discount) return res.status(404).json({ error: 'Invalid code' });
+  if (discount.expiresAt && discount.expiresAt < new Date()) return res.status(400).json({ error: 'Code expired' });
+  if (discount.maxUses && discount.usedCount >= discount.maxUses) return res.status(400).json({ error: 'Code no longer valid' });
+  res.json({ discount: { code: discount.code, type: discount.type, value: discount.value } });
+});
+
+// Newsletter (placeholder — integrate with Mailchimp/SendGrid in production)
+router.post('/newsletter', express.json(), (req, res) => {
+  const { email } = req.body;
+  if (!email) return res.status(400).json({ error: 'Email required' });
+  // TODO: forward to email provider
+  console.log('Newsletter signup:', email);
+  res.json({ ok: true });
+});
+
+// Contact form
+router.post('/contact', express.json(), (req, res) => {
+  const { name, email, subject, message } = req.body;
+  if (!name || !email || !message) return res.status(400).json({ error: 'Missing fields' });
+  // TODO: send email to support
+  console.log('Contact form:', { name, email, subject, message });
+  res.json({ ok: true });
+});
+
+module.exports = router;
+
+const express = require('express');
+const Order = require('../models/Order');
+const Product = require('../models/Product');
+const Discount = require('../models/Discount');
+const { authOptional, authRequired } = require('../middleware/auth');
+
+const router = express.Router();
+
+async function generateOrderNumber() {
+  const year = new Date().getFullYear();
+  const count = await Order.countDocuments({ orderNumber: new RegExp(`^NORA-${year}-`) }) + 1;
+  return `NORA-${year}-${String(count).padStart(4, '0')}`;
+}
+
+// Create order (guest or authenticated)
+router.post('/', authOptional, async (req, res) => {
+  try {
+    const { customer, shipping, shippingMethod, paymentMethod, items, totals, discountCode } = req.body;
+
+    if (!customer || !shipping || !items?.length) {
+      return res.status(400).json({ error: 'Missing required fields' });
+    }
+
+    // Verify stock & prices server-side
+    let subtotal = 0;
+    const verifiedItems = [];
+    for (const item of items) {
+      const product = await Product.findById(item.productId || item.id);
+      if (!product) return res.status(400).json({ error: `Product not found: ${item.id}` });
+      if (product.stock < item.qty) return res.status(400).json({ error: `Insufficient stock for ${product.name}` });
+      subtotal += product.price * item.qty;
+      verifiedItems.push({
+        productId: product._id,
+        name: product.name,
+        price: product.price,
+        size: item.size,
+        qty: item.qty,
+        image: product.image
+      });
+      // Reserve stock
+      product.stock -= item.qty;
+      await product.save();
+    }
+
+    // Apply discount if provided
+    let discountAmount = 0;
+    if (discountCode) {
+      const discount = await Discount.findOne({ code: discountCode.toUpperCase(), active: true });
+      if (discount) {
+        discountAmount = discount.type === 'percent' ? subtotal * (discount.value / 100) : discount.value;
+        discount.usedCount += 1;
+        await discount.save();
+      }
+    }
+
+    const orderNumber = await generateOrderNumber();
+    const order = new Order({
+      orderNumber,
+      user: req.user?._id,
+      customer,
+      shipping,
+      shippingMethod,
+      paymentMethod,
+      items: verifiedItems,
+      totals: {
+        subtotal,
+        shipping: totals.shipping,
+        discount: discountAmount,
+        tax: totals.tax,
+        total: subtotal - discountAmount + totals.shipping + totals.tax
+      },
+      discountCode,
+      status: (paymentMethod === 'cod' || paymentMethod === 'bank') ? 'Pending' : 'Confirmed',
+      paymentStatus: (paymentMethod === 'cod' || paymentMethod === 'bank') ? 'Pending' : 'Authorized'
+    });
+    await order.save();
+
+    res.status(201).json({ order });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to create order' });
+  }
+});
+
+// Track order (public, requires order number + email/phone)
+router.post('/track', async (req, res) => {
+  const { orderNumber, contact } = req.body;
+  const order = await Order.findOne({ orderNumber });
+  if (!order) return res.status(404).json({ error: 'Order not found' });
+  if (order.customer.email !== contact && order.customer.phone !== contact) {
+    return res.status(403).json({ error: 'Contact does not match order' });
+  }
+  res.json({
+    orderNumber: order.orderNumber,
+    status: order.status,
+    placedAt: order.createdAt,
+    estimatedDelivery: null, // compute from shipping method
+    trackingNumber: order.trackingNumber,
+    items: order.items
+  });
+});
+
+// Customer's own orders
+router.get('/my', authRequired, async (req, res) => {
+  const orders = await Order.find({ user: req.user._id }).sort({ createdAt: -1 });
+  res.json({ orders });
+});
+
+module.exports = router;
+
+/* =========================================================
+   Payment routes
+   IMPORTANT: Never handle raw card data on the frontend.
+   Use hosted checkout or provider SDKs. Server verifies notifications.
+   ========================================================= */
+
+const express = require('express');
+const crypto = require('crypto');
+const axios = require('axios');
+const Order = require('../models/Order');
+
+const router = express.Router();
+
+/* ---------------- PayHere (Sri Lanka) ---------------- */
+
+function md5(str) {
+  return crypto.createHash('md5').update(str).digest('hex');
+}
+
+// Create a PayHere hosted checkout session
+router.post('/payhere/create', async (req, res) => {
+  const { orderId, returnUrl, cancelUrl, notifyUrl } = req.body;
+  const order = await Order.findById(orderId);
+  if (!order) return res.status(404).json({ error: 'Order not found' });
+
+  const merchantId = process.env.PAYHERE_MERCHANT_ID;
+  const merchantSecret = process.env.PAYHERE_MERCHANT_SECRET;
+  if (!merchantId || !merchantSecret) {
+    return res.status(500).json({ error: 'PayHere not configured' });
+  }
+
+  const amount = order.totals.total.toFixed(2);
+  const currency = 'LKR'; // or 'USD' if configured
+  const hash = md5(
+    merchantId + order.orderNumber + amount + currency +
+    md5(merchantSecret)
+  ).toUpperCase();
+
+  const payload = {
+    sandbox: process.env.PAYHERE_SANDBOX === 'true',
+    merchant_id: merchantId,
+    return_url: returnUrl,
+    cancel_url: cancelUrl,
+    notify_url: notifyUrl,
+    first_name: order.customer.firstName,
+    last_name: order.customer.lastName,
+    email: order.customer.email,
+    phone: order.customer.phone,
+    address: order.shipping.address1,
+    city: order.shipping.city,
+    country: order.shipping.country,
+    order_id: order.orderNumber,
+    items: order.items.map(i => i.name).join(', '),
+    currency,
+    amount,
+    hash
+  };
+
+  // In production, POST to PayHere gateway or redirect the user to hosted checkout
+  res.json({ payload, redirectUrl: payload.sandbox
+    ? 'https://sandbox.payhere.lk/pay/checkout'
+    : 'https://www.payhere.lk/pay/checkout' });
+});
+
+// PayHere server-to-server notification (IPN)
+// IMPORTANT: verify the md5 hash using your merchant secret
+router.post('/payhere/notify', express.urlencoded({ extended: true }), async (req, res) => {
+  const data = req.body;
+  const merchantSecret = process.env.PAYHERE_MERCHANT_SECRET;
+  const localHash = md5(
+    data.merchant_id + data.order_id + data.payhere_amount + data.payhere_currency +
+    data.status_code + md5(merchantSecret)
+  ).toUpperCase();
+
+  if (localHash !== data.md5sig) {
+    console.warn('PayHere hash mismatch');
+    return res.status(400).send('invalid');
+  }
+
+  const order = await Order.findOne({ orderNumber: data.order_id });
+  if (!order) return res.status(404).send('order not found');
+
+  if (data.status_code === 2) {        // success
+    order.paymentStatus = 'Paid';
+    order.paymentReference = data.payment_id;
+    order.status = order.status === 'Pending' ? 'Confirmed' : order.status;
+  } else if (data.status_code === 0) { // pending
+    order.paymentStatus = 'Pending';
+  } else {                              // failed / cancelled
+    order.paymentStatus = 'Failed';
+  }
+  await order.save();
+  res.status(200).send('ok');
+});
+
+/* ---------------- Stripe (international) ---------------- */
+
+router.post('/stripe/create-session', async (req, res) => {
+  if (!process.env.STRIPE_SECRET_KEY) {
+    return res.status(500).json({ error: 'Stripe not configured' });
+  }
+  const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+  const { orderId, successUrl, cancelUrl } = req.body;
+  const order = await Order.findById(orderId);
+  if (!order) return res.status(404).json({ error: 'Order not found' });
+
+  const session = await stripe.checkout.sessions.create({
+    mode: 'payment',
+    payment_method_types: ['card'],
+    line_items: order.items.map(i => ({
+      price_data: {
+        currency: 'usd',
+        product_data: { name: i.name },
+        unit_amount: Math.round(i.price * 100)
+      },
+      quantity: i.qty
+    })),
+    shipping_options: [
+      { shipping_rate_data: { type: 'fixed_amount', fixed_amount: { amount: Math.round(order.totals.shipping * 100), currency: 'usd' }, display_name: 'Shipping' } }
+    ],
+    success_url: successUrl,
+    cancel_url: cancelUrl,
+    metadata: { orderNumber: order.orderNumber }
+  });
+
+  res.json({ url: session.url });
+});
+
+// Stripe webhook
+router.post('/stripe/webhook', express.raw({ type: 'application/json' }), async (req, res) => {
+  if (!process.env.STRIPE_SECRET_KEY || !process.env.STRIPE_WEBHOOK_SECRET) {
+    return res.status(500).send('not configured');
+  }
+  const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+  const sig = req.headers['stripe-signature'];
+  let event;
+  try {
+    event = stripe.webhooks.constructEvent(req.body, sig, process.env.STRIPE_WEBHOOK_SECRET);
+  } catch (err) {
+    return res.status(400).send(`Webhook Error: ${err.message}`);
+  }
+
+  if (event.type === 'checkout.session.completed') {
+    const session = event.data.object;
+    const order = await Order.findOne({ orderNumber: session.metadata.orderNumber });
+    if (order) {
+      order.paymentStatus = 'Paid';
+      order.paymentReference = session.payment_intent;
+      order.status = order.status === 'Pending' ? 'Confirmed' : order.status;
+      await order.save();
+    }
+  }
+  res.json({ received: true });
+});
+
+module.exports = router;
+
+const express = require('express');
+const multer = require('multer');
+const path = require('path');
+const Product = require('../models/Product');
+const Order = require('../models/Order');
+const User = require('../models/User');
+const Discount = require('../models/Discount');
+const { authRequired, adminOnly } = require('../middleware/auth');
+
+const router = express.Router();
+router.use(authRequired, adminOnly);
+
+// Image uploads
+const storage = multer.diskStorage({
+  destination: 'uploads/',
+  filename: (req, file, cb) => cb(null, Date.now() + path.extname(file.originalname))
+});
+const upload = multer({ storage, limits: { fileSize: 5 * 1024 * 1024 } });
+
+// Products
+router.get('/products', async (req, res) => {
+  const products = await Product.find().sort({ createdAt: -1 });
+  res.json({ products });
+});
+
+router.post('/products', upload.single('image'), async (req, res) => {
+  const data = { ...req.body };
+  if (req.file) data.image = '/uploads/' + req.file.filename;
+  data.price = +data.price;
+  data.stock = +data.stock;
+  if (data.sizes && typeof data.sizes === 'string') data.sizes = data.sizes.split(',').map(s => s.trim()).filter(Boolean);
+  const product = new Product(data);
+  await product.save();
+  res.status(201).json({ product });
+});
+
+router.put('/products/:id', upload.single('image'), async (req, res) => {
+  const data = { ...req.body };
+  if (req.file) data.image = '/uploads/' + req.file.filename;
+  if (data.price) data.price = +data.price;
+  if (data.stock !== undefined) data.stock = +data.stock;
+  if (data.sizes && typeof data.sizes === 'string') data.sizes = data.sizes.split(',').map(s => s.trim()).filter(Boolean);
+  const product = await Product.findByIdAndUpdate(req.params.id, data, { new: true });
+  res.json({ product });
+});
+
+router.delete('/products/:id', async (req, res) => {
+  await Product.findByIdAndDelete(req.params.id);
+  res.json({ ok: true });
+});
+
+// Orders
+router.get('/orders', async (req, res) => {
+  const orders = await Order.find().sort({ createdAt: -1 }).limit(200);
+  res.json({ orders });
+});
+
+router.patch('/orders/:id/status', async (req, res) => {
+  const { status, paymentStatus, trackingNumber } = req.body;
+  const order = await Order.findById(req.params.id);
+  if (!order) return res.status(404).json({ error: 'Not found' });
+  if (status) order.status = status;
+  if (paymentStatus) order.paymentStatus = paymentStatus;
+  if (trackingNumber) order.trackingNumber = trackingNumber;
+  await order.save();
+  res.json({ order });
+});
+
+// Customers
+router.get('/customers', async (req, res) => {
+  const users = await User.find({ role: 'customer' }).select('-passwordHash').sort({ createdAt: -1 });
+  res.json({ users });
+});
+
+// Discounts
+router.get('/discounts', async (req, res) => {
+  const discounts = await Discount.find().sort({ createdAt: -1 });
+  res.json({ discounts });
+});
+
+router.post('/discounts', async (req, res) => {
+  const discount = new Discount(req.body);
+  await discount.save();
+  res.status(201).json({ discount });
+});
+
+router.delete('/discounts/:id', async (req, res) => {
+  await Discount.findByIdAndDelete(req.params.id);
+  res.json({ ok: true });
+});
+
+// Stats
+router.get('/stats', async (req, res) => {
+  const totalSales = await Order.aggregate([
+    { $match: { paymentStatus: 'Paid' } },
+    { $group: { _id: null, total: { $sum: '$totals.total' }, count: { $sum: 1 } } }
+  ]);
+  const productCount = await Product.countDocuments();
+  const customerCount = await User.countDocuments({ role: 'customer' });
+  const lowStock = await Product.countDocuments({ stock: { $lt: 5 } });
+  res.json({
+    totalSales: totalSales[0]?.total || 0,
+    orderCount: totalSales[0]?.count || 0,
+    productCount,
+    customerCount,
+    lowStock
+  });
+});
+
+module.exports = router;
+
+
+              </script>
+                        </body>
+                        </html>
+                    
